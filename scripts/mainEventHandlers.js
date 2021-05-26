@@ -26,6 +26,8 @@ $(document).ready(function(){
         $('.fadingImageContainer').hover(imageGliderMouseIn,imageGliderMouseOut);
     }
     
+    lazyImages();    
+
 
   
 
