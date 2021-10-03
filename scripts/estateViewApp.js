@@ -255,7 +255,7 @@ function addMarkerToMap(property){
       case "garage":
         el.className = 'markerGarage';
         break;
-      case "land":
+      case "grond":
         el.className = 'markerLand';
         break;
       default:
