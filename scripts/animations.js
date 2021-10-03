@@ -97,8 +97,29 @@ function initAutoSlider(){
             return result;
         }
     }
+}
 
+function initJumpingElements(){
+    let elements = $('.jumpingElement');
 
+    for(let i = 0; i < elements.length; i++){
+        let element = elements[i];
+
+        setInterval(function(){
+            let move = element.getAttribute('move');
+
+            if(move === "up"){
+                element.style.marginBottom = "40px";
+                element.setAttribute('move','down');
+                element.transitionDuration = "0s";
+            }
+            else{
+                element.style.marginBottom = "0px";
+                element.setAttribute('move','up');
+                element.transitionDuration = "1s";
+            }
+        }, 800);
+    }
 }
 
 

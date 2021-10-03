@@ -1,0 +1,104 @@
+:root {
+  --orange: #DD7430;
+  --lightOrange: #E79D6C;
+  --grey: #818386;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  width: 120px;
+  padding: 5px 0px 5px 0px;
+  border: 1px solid #F4F4F4;
+  color: #5F5E5F;
+  align-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.8em;
+  box-shadow: 0 1px 2px #0000001c;
+}
+.dropdown .expand {
+  top: 0;
+  bottom: 0;
+  right: 8px;
+  margin: auto;
+  width: 15px;
+  position: absolute;
+}
+.dropdown span {
+  margin-right: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.dropdown .icon {
+  width: 18px;
+  margin-right: 9px;
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  border: 1px solid #F4F4F4;
+  left: -1px;
+  z-index: 1;
+  color: black;
+  font-size: 0.9em;
+  flex-direction: column;
+  z-index: 9;
+}
+.dropdown-content:hover {
+  cursor: pointer;
+}
+.dropdown-content .solop {
+  padding-left: 5px;
+}
+.dropdown-content input[type=range] {
+  height: 50%;
+  width: 60%;
+  margin: auto;
+  transform: rotate(270deg);
+  background-color: #9a905d;
+}
+.dropdown-content input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  color: #13bba4;
+  cursor: pointer;
+}
+.dropdown-content input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #434343;
+}
+.dropdown-content p {
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dropdown-content p .itemIcon {
+  width: 18px;
+  margin-right: 4px;
+  margin-left: 3px;
+}
+.dropdown-content p:hover {
+  background: #0075FF;
+  color: white;
+}
+.dropdown-content .selected {
+  background: #0075FF;
+  color: white;
+}
+
+.dropdown:hover .hoverA, .dropdown:hover {
+  display: flex;
+  border-top: none;
+  background: white;
+  color: black;
+  box-shadow: 0 1px 2px #0000001c;
+}/*# sourceMappingURL=dropdown.css.map */

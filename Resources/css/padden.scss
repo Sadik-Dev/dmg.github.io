@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root{
+    --orange: #DD7430;
+    --lightOrange: #E79D6C;
+    --grey: #818386;
+}
+.jumpingElement{
+    transition-duration: 1s;
+}
+.head{
+    background: black;
+    z-index: 0;
+
+    .bigImg {
+        opacity: .5;
+    }
+
+    .wrapper{
+        margin-left: 7%;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        height: 200px;
+    }
+    .appGoButton{
+        color: white;
+        border: var(--orange) 1px dashed;
+        width: 300px;
+        display: flex;
+ 
+        justify-content: center;
+        align-items:center;
+        padding: 10px;
+        font-size: 1.2em;
+        
+        img{
+            width: 32px;
+            margin-left: 20px;
+        }
+        &:link{
+            text-decoration: none;
+        }
+        &:hover{
+            cursor: pointer;
+            background: var(--orange);
+            transition-duration: 0.5s;
+        }
+    }
+}
+
+#realEstateMap{
+    height: 100vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Poppins', sans-serif;
+  .header{
+        height: 12%;
+        width: 100%;
+        border-bottom: #F4F4F4 1px solid;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .wrapContainer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 50%;
+            height: 100%;
+            align-items: center;
+            align-content: space-evenly;
+            margin-left: auto;
+        }
+        .inputContainer{
+            width: 300px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+            position: relative;
+            span{
+                color: #b8b8b8;
+                font-size: 0.9em;
+                font-weight: 400;
+                margin-bottom: 6px;
+            }
+            
+            input{
+                border: none;
+                color: #837583;
+                font-weight: 600;
+                font-size: 1.1em;
+            }
+            img{
+                width: 20px;
+                position: absolute;
+                right: -30px;
+                bottom: 4px;
+            }
+         
+        }
+        .resultContainer{
+            width: 300px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-left: 80px;
+            position: relative;
+            span{
+                color: #b8b8b8;
+                font-size: 0.9em;
+                font-weight: 400;
+                margin-bottom: 6px;
+            }
+            
+            p{
+                border: none;
+                color: #5F5E5F;
+                font-weight: 500;
+                font-size: 1.1em;
+                margin: 0;
+                padding: 0;
+            }
+            img{
+                width: 20px;
+                position: absolute;
+                left: -30px;
+                bottom: 2px;
+            }
+        }
+
+        .dropdown{
+            margin-right: 20px;
+        }
+        .type{
+            width: 150px;
+        }
+        .rangeDrop{
+            width: 230px;
+            &:hover .dropdown-content, &:hover {
+                display: flex;
+                border-top: none;
+                background: white;
+                color: black;
+              }
+              &:hover .icon{
+                filter: invert(0%) sepia(30%) saturate(7488%) hue-rotate(47deg) brightness(95%) contrast(96%);
+              }
+            
+            .dropdown-content{
+                height: 200px;
+
+                span:nth-child(1){
+                    position: absolute;
+                    top: 5%;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    margin: auto;
+                }
+                span:nth-child(3){
+                    position: absolute;
+                    bottom: 5%;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+        }
+        .bedrooms{
+            width: 170px;
+        }
+    }
+    .body{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 88%;
+        .map{
+            width: 50%;
+            overflow: hidden;
+           #map{
+               width: 100%;
+               height: 1200px;
+               margin: auto;
+               .mapboxgl-popup-content {
+                   background: white;
+                   h3{
+                       font-size: 1.1em;
+                       font-weight: 600;
+                       width: 100%;
+                       text-align: center;
+                   }
+               }
+           }
+
+           .markerBuilding {
+            background-image: url('../icons/house-marker.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          .markerGarage{
+            background-image: url('../icons/garage-marker.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          .markerLand{
+            background-image: url('../icons/land-marker.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+        .listContainer{
+            width: 50%;
+         
+            .top{
+                width: 100%;
+                height: 7%;
+                display: flex;
+                align-items: center;
+
+                .sort{
+                    margin: auto 0 auto auto;
+                    width: auto;
+                    color: #b8b8b8;
+                    font-size: 0.9em;
+                    font-weight: 400;
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 10px;
+                    user-select: none;
+                    .sorter{
+                        margin-left: 4px;
+                        color: #5F5E5F;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        img{
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+
+            .cards-list{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+                overflow-y: scroll;
+                height: 83%;
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+                
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f100;
+                }
+                
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(136, 136, 136, 0.849);
+                }
+                
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                    border-radius: 5px;
+                }
+                .pad-card{
+                    height: 600px;
+                    width: 600px;
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    position: relative;
+                    .padImages{
+                        width: 100%;
+                        height: 65%;
+                        z-index: 1;
+                        .padImage{
+                            width: auto;
+                            min-width: 100%;
+                            height: 100%;
+                            border-radius: 5px;
+                            box-shadow: #00000012 0px 5px 20px;
+
+                        }
+                    }
+
+                    .pad-info{
+                        width: 85%;
+                        height: 40%;
+                        background: white;
+                        z-index: 2;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        bottom: 5%;
+                        border-radius: 5px;
+                        box-shadow: #00000012 0px 5px 20px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .info-row:nth-child(1){
+                            width: 90%;
+                            margin: 20px auto 0 auto;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            color: var(--grey);
+                            border-bottom: #F4F4F4 1px solid;
+                            font-size: .9em;
+                            padding-bottom: 10px;
+                        }
+
+                        .info-row:nth-child(2){
+                            font-size: 1.5em;
+                            color: black;
+                            font-weight: 600;
+                            width: 90%;
+                            margin: 10% auto 4% auto;
+                            display: flex;
+                            span{
+                                margin: auto auto auto 0 ;
+                            }
+                        }
+                        .info-row:nth-child(3){
+                            display: flex;
+                            flex-direction: row;
+                            width: 90%;
+                            margin: 0 auto 0 auto;
+                            justify-content: start;
+                            .info{
+                                font-size: 1.2em;
+                                display: flex;
+                                border-right: 1px solid #807f7f94;
+                                border-radius: 1px;
+                                margin-right: 20px;
+                                font-weight: 300;
+
+                                &:nth-child(3){
+                                    border: none;
+                                }
+                                img{
+                                    width: 20px;
+                                    margin-left: 5px;
+                                    margin-right: 10px;
+                                }
+                            }
+                           
+                        }
+                        .info-row:nth-child(4){
+                            margin: auto auto 20px auto;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            width: 90%;
+                            border-top: 1px solid #F4F4F4;
+                            padding-top: 20px;
+
+                            span:nth-child(1){
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1920px){
+    #realEstateMap .body .listContainer .cards-list .pad-card {
+        height: 350px;
+        width: 350px;
+        
+        .pad-info{
+            bottom: 10%;
+            .info-row:nth-child(1) {
+                font-size: .8em;
+                margin-top: 10px;
+                padding-bottom: 5px;
+            }
+
+            .info-row:nth-child(2) {
+                font-size: 1.3em;
+                margin: 7% auto 4% auto;
+            }
+            .info-row:nth-child(3) {
+                .info{
+                    font-size: .9em;
+
+                    img{
+                        width: 12px;
+                    }
+                }
+            }
+            .info-row:nth-child(4) {
+                font-size: .8em;
+                margin: auto auto 5px auto;
+                padding-top: 5px;
+            }
+
+        }
+    }
+}
