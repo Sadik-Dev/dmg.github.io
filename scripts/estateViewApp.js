@@ -28,6 +28,8 @@ function initMap(){
 function setEVAList(list){
     allitems = list;
     currentList = allitems;
+    disableScroll(    $('#realEstateMap .header'));
+    disableScroll(    $('.listContainer .top'));
     sortList(list);;
     showListInPage(list);
     setBedroomsLimit();
@@ -36,6 +38,25 @@ function setEVAList(list){
     setTotSurfaceLimit();
     initEventHandlers();
 }
+function disableScroll(element){
+    element.bind('mousewheel DOMMouseScroll', function(e) {
+        var scrollTo = null;
+    
+        if (e.type == 'mousewheel') {
+            scrollTo = (e.originalEvent.wheelDelta * -1);
+        }
+        else if (e.type == 'DOMMouseScroll') {
+            scrollTo = 40 * e.originalEvent.detail;
+        }
+    
+        if (scrollTo) {
+            e.preventDefault();
+            $(this).scrollTop(scrollTo + $(this).scrollTop());
+        }
+    })
+}
+
+
 
 function changeSort(){
     if(currentSort === "asc"){
@@ -132,6 +153,10 @@ function setRangeSpan(range,span,symbol){
 }
 function showListInPage(list){
     //Set the amout of results
+    $( ".markerBuilding" ).remove();
+    $( ".markerGarage" ).remove();
+    $( ".markerLand" ).remove();
+
     $('#listCount').html(list.length + " padden");
     //Clean container
     let parent = document.getElementById("padsContainer");
@@ -220,8 +245,35 @@ function showListInPage(list){
         padInfo.append(infoRow3);
         padInfo.append(infoRow4);
         padCard.append(padInfo);
-        
-        addMarkerToMap(pad);
+        let marker = addMarkerToMap(pad);
+
+        padCard.onmouseenter = function(){
+            marker.click();
+            map.flyTo({
+                center: [
+                pad.localisation[0],
+                pad.localisation[1] 
+                ],
+                essential: true
+                });
+        };
+
+        //Location icon
+        let location = document.createElement('img');
+        location.src = "Resources/Icons/location.png";
+        location.className = "locationIcon";
+        location.onclick = function(){
+            marker.click();
+            map.flyTo({
+                center: [
+                pad.localisation[0],
+                pad.localisation[1] 
+                ],
+                essential: true
+                });
+        }
+        padInfo.append(location);
+
         parent.append(padCard);
     }
  
@@ -268,9 +320,11 @@ function addMarkerToMap(property){
   .setLngLat([property.localisation[0], property.localisation[1]])
   .setPopup(
     new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(`<h3>€ ${property.price }</h3><p>${property.adress}</p>`)
+      .setHTML(`<a href="google.com" target="_blank"> <img src="${property.img}"><h3>€ ${property.price }</h3><p>${property.adress}</p></a>`)
   )
   .addTo(map);
+
+  return el;
 }
 
 function addFilter(filterType, value, element){

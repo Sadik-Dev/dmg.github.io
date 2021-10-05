@@ -5,6 +5,10 @@
   --grey: #818386;
 }
 
+body {
+  overflow: visible;
+}
+
 .jumpingElement {
   transition-duration: 1s;
 }
@@ -51,6 +55,7 @@
   margin-top: 5%;
   margin-bottom: 5%;
   font-family: "Poppins", sans-serif;
+  border-bottom: 10px solid #F4F4F4;
 }
 #realEstateMap .header {
   height: 12%;
@@ -182,11 +187,30 @@
 #realEstateMap .body .map #map .mapboxgl-popup-content {
   background: white;
 }
+#realEstateMap .body .map #map .mapboxgl-popup-content a:focus {
+  border: none;
+  outline: none;
+}
+#realEstateMap .body .map #map .mapboxgl-popup-content a:link {
+  text-decoration: none;
+  color: unset;
+}
 #realEstateMap .body .map #map .mapboxgl-popup-content h3 {
-  font-size: 1.1em;
+  font-size: 1.3em;
   font-weight: 600;
   width: 100%;
-  text-align: center;
+  text-align: left;
+}
+#realEstateMap .body .map #map .mapboxgl-popup-content h3:focus {
+  border: none;
+  outline: none;
+}
+#realEstateMap .body .map #map .mapboxgl-popup-content img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+#realEstateMap .body .map #map .mapboxgl-popup-content:hover {
+  cursor: pointer;
 }
 #realEstateMap .body .map .markerBuilding {
   background-image: url("../icons/house-marker.png");
@@ -255,7 +279,7 @@
   justify-content: space-evenly;
   width: 100%;
   overflow-y: scroll;
-  height: 83%;
+  height: 92%;
   /* width */
   /* Track */
   /* Handle */
@@ -281,6 +305,15 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
+}
+#realEstateMap .body .listContainer .cards-list .pad-card:hover {
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+#realEstateMap .body .listContainer .cards-list .pad-card:hover .pad-info {
+  border: 2px solid #0075D1;
+  transition-duration: 0.5s;
+  box-shadow: #0075ff 0px 1px 6px;
 }
 #realEstateMap .body .listContainer .cards-list .pad-card .padImages {
   width: 100%;
@@ -308,6 +341,15 @@
   box-shadow: #00000012 0px 5px 20px;
   display: flex;
   flex-direction: column;
+  border: 2px solid white;
+}
+#realEstateMap .body .listContainer .cards-list .pad-card .pad-info .locationIcon {
+  width: 35px;
+  top: 0%;
+  bottom: 0;
+  margin: auto;
+  right: 5px;
+  position: absolute;
 }
 #realEstateMap .body .listContainer .cards-list .pad-card .pad-info .info-row:nth-child(1) {
   width: 90%;

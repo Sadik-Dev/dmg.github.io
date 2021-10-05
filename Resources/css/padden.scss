@@ -4,6 +4,10 @@
     --lightOrange: #E79D6C;
     --grey: #818386;
 }
+body{
+    overflow: visible;
+
+}
 .jumpingElement{
     transition-duration: 1s;
 }
@@ -53,6 +57,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     font-family: 'Poppins', sans-serif;
+    border-bottom: 10px solid #F4F4F4;
   .header{
         height: 12%;
         width: 100%;
@@ -184,12 +189,35 @@
                height: 1200px;
                margin: auto;
                .mapboxgl-popup-content {
+                    a{
+                        &:focus{
+                            border: none;
+                            outline: none;
+                        }
+                    }
+              
+                    a:link{
+                        text-decoration: none;
+                        color: unset;
+                    }
+                   
                    background: white;
                    h3{
-                       font-size: 1.1em;
+                       font-size: 1.3em;
                        font-weight: 600;
                        width: 100%;
-                       text-align: center;
+                       text-align: left;
+                       &:focus{
+                        border: none;
+                        outline: none;
+                    }
+                   }
+                   img{
+                       width: 200px;
+                       margin-bottom: 10px;
+                   }
+                   &:hover{
+                       cursor: pointer;
                    }
                }
            }
@@ -262,7 +290,7 @@
                 justify-content: space-evenly;
                 width: 100%;
                 overflow-y: scroll;
-                height: 83%;
+                height: 92%;
                 /* width */
                 &::-webkit-scrollbar {
                     width: 10px;
@@ -290,6 +318,16 @@
                     flex-direction: column;
                     overflow: hidden;
                     position: relative;
+
+                    &:hover{
+                        cursor: pointer;
+                        transition-duration: 0.5s;
+                    }
+                    &:hover .pad-info{
+                       border: 2px solid #0075D1;
+                       transition-duration: 0.5s;
+                           box-shadow: rgb(0 117 255) 0px 1px 6px;
+                    }
                     .padImages{
                         width: 100%;
                         height: 65%;
@@ -318,7 +356,15 @@
                         box-shadow: #00000012 0px 5px 20px;
                         display: flex;
                         flex-direction: column;
-
+                        border: 2px solid white;
+                        .locationIcon{
+                            width:35px;
+                            top: 0%;
+                            bottom: 0;
+                            margin: auto;
+                            right: 5px;
+                            position: absolute;
+                        }
                         .info-row:nth-child(1){
                             width: 90%;
                             margin: 20px auto 0 auto;

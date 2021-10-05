@@ -6,7 +6,7 @@ html{
     scroll-behavior: smooth;
 }
 :root{
-    --orange: #DD7430;
+    --orange: #E79D6C;
     --lightOrange: #E79D6C;
     --grey: #818386;
 }
@@ -19,7 +19,6 @@ a:hover{
 body{
     font-family: 'Merriweather', serif;
     font-family: 'KoHo', sans-serif;
-    overflow: hidden;
 }
 
 /*Loading Screen*/
@@ -595,13 +594,13 @@ ___________Section what we do
     height: auto;
 }
 .story .numberBig{
-    font-size: 2em;
-    margin: 3% auto 10% auto;
+    font-size: 1.5em;
+    margin: 3% auto 5% auto;
 }
 .story p{
-    color: var(--orange);
+    color: #E79D6C;
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 /*Form*/
