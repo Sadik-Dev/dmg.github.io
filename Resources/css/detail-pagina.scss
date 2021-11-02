@@ -1,0 +1,263 @@
+.landingpage{
+    height: auto;
+    background: white;
+    border-bottom: 2px solid #80808021;
+    padding-bottom: 5px;
+    overflow: visible;
+    header{
+        height: 12vh;
+        margin-top: 0;
+        width: 90%;
+        margin: 0 auto;
+
+        .logo{
+            width: 75px;
+        }
+        nav a {
+            color: #1E1E1E;
+            font-size: 1.1em;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            border-bottom: 2px solid transparent;
+
+            &:hover{
+                border-bottom: 2px solid #E79D6C;
+                transition-duration: 0.5s;
+            }
+        }
+        .contactBT{
+            color: white;
+            box-shadow: #00000012 1px 2px 3px;
+            padding: 4px 9px 4px 9px;
+            background: #E79D6C;
+            border: 2px solid #E79D6C;
+            &:hover{
+                color: #E79D6C;
+                background: transparent;
+                border: 2px solid #E79D6C;
+            }
+        }
+    }
+    .bigImg{
+        display: none;
+    }
+}
+
+.endOfPage{
+    background: white;
+ 
+}
+
+.detailPagina{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto 0 auto;
+
+
+    .heading{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        .main{
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            span{margin-bottom: 5px;}
+            & span:nth-child(1){
+                font-size: 1.8em;
+                font-weight: 700;
+                color: #1E1E1E;
+            }
+            & span:nth-child(2){
+                font-size: 1.8em;
+                font-weight: 700;
+                color: #E79D6C;
+            }
+        }
+
+        .bot{
+            display: flex;
+            width: 90%;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+
+        .mainTable{
+            width: 90%;
+            margin: 20px auto 0 auto;
+            border: 1px solid #0000000a;
+            background: #F8F9FD;
+            padding: 10px 0 10px 0;
+            tbody{
+                width: 100%;
+            }
+            tr{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 20px auto 20px auto;
+                width: 90%;
+
+                td{
+                    width: 25%;
+                }
+                td:nth-child(2){
+                    width: 30%;
+                    margin-right: 5%;
+                }
+                td:nth-child(3){
+                    width: 35%
+                }
+                td:nth-child(4){
+                    width: 15%
+                }
+            }
+            tr:nth-child(odd){
+                td{
+                    color: #E79D6C;
+                    font-weight: 500;
+                    font-size: .9em;
+                }
+            }
+            tr:nth-child(even){
+                td{
+                    color: #1E1E1E;
+                    font-weight: 700;
+                    font-size: 1.3em;
+                }
+            }
+        }
+        .infoTable{
+            width: 90%;
+            margin: 0px auto 0 auto;
+            border: 1px solid #0000000a;
+            background: #ffffff14;
+            padding: 10px 0 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            tbody{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                tr{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 20px auto 10px auto;
+                    width: 25%;
+                    td:nth-child(1){
+                        
+                            color: #E79D6C;
+                            font-weight: 500;
+                            font-size: .9em;
+                        
+                    }
+                    td:nth-child(2){
+                        
+                            color: #1E1E1E;
+                            font-weight: 700;
+                            font-size: 1.3em;
+                            margin-bottom: 30px;
+                        
+                    }
+                }
+                
+            }
+           
+        }
+    }
+}
+@media (max-width: 1300px) {
+    .sliderFrame{
+        height: 500px;
+    }
+}
+
+@media (max-width: 1200px) {
+    header nav {
+        display: none;
+    }
+
+    header .flexRow2 {
+        display: flex;
+        margin: auto 0 auto;
+    }
+    .flexslider {
+        height: 60%;
+    }
+    .carrousel {
+        width: 100%;
+        margin: 5% auto 0 auto;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        bottom: 10px;
+        left: auto;
+    }
+}
+
+@media (max-width: 1300px) {
+    .sliderFrame{
+        height: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    
+}
+
+@media (max-width: 650px) {
+    .detailPagina{
+        width: 100%;
+    }
+    .detailPagina .content .mainTable tr:nth-child(even) td {
+        color: #1E1E1E;
+        font-weight: 700;
+        font-size: 1em;
+    }
+    .detailPagina .content .infoTable tr:nth-child(even) td {
+        color: #1E1E1E;
+        font-weight: 700;
+        font-size: 1em;
+    }
+    .detailPagina .content .infoTable, .detailPagina .content .mainTable{
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 520px) {
+    .flexslider {
+        height: 50%;
+    }
+    .slides{
+        height: 90px;
+    }
+    .carrousel{
+        bottom: 20%;
+    }
+}
+
+@media (max-width: 450px) {
+    .flexslider {
+        height: 45%;
+    }
+     .slides{
+        height: 90px;
+    }
+    .carrousel{
+        bottom: 27%;
+    }
+}

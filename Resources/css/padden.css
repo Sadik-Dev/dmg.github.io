@@ -20,12 +20,28 @@ body {
 .head .bigImg {
   opacity: 0.5;
 }
+.head #pageTitle {
+  font-size: 3.5em;
+  margin: 5% 0 0 4%;
+  color: white;
+  width: 75%;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.3em;
+  border-left: 5px solid #E79D6C;
+  padding-left: 10px;
+}
 .head .wrapper {
   margin-left: 7%;
   margin-top: 5%;
   display: flex;
   align-items: center;
   height: 200px;
+  position: absolute;
+  bottom: 5%;
+  margin: auto;
+  right: 20px;
 }
 .head .appGoButton {
   color: white;
@@ -284,6 +300,22 @@ body {
   /* Track */
   /* Handle */
   /* Handle on hover */
+}
+#realEstateMap .body .listContainer .cards-list #empty-list {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  opacity: 0.7;
+}
+#realEstateMap .body .listContainer .cards-list #empty-list img {
+  width: 40%;
+  margin-bottom: 20px;
+}
+#realEstateMap .body .listContainer .cards-list #empty-list h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 #realEstateMap .body .listContainer .cards-list::-webkit-scrollbar {
   width: 10px;

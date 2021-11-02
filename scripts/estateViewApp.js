@@ -15,6 +15,9 @@ let totSurface = null;
 
 let map;
 let currentSort = "asc";
+var geocoder = new google.maps.Geocoder();
+let language = "nl";
+
 
 function initMap(){
     mapboxgl.accessToken = 'pk.eyJ1Ijoib3Vzc2FtYS1zYWRpayIsImEiOiJja3U4Yzl6NXAyMWR5MnBvNjNia2dsajRrIn0.6WlWCU6Nx5KekViBUuh5fg';
@@ -22,13 +25,15 @@ function initMap(){
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [ 3.6005095, 50.7505367],
-    zoom: 13 
+    zoom: 12
     });
+    
+
 }
 function setEVAList(list){
     allitems = list;
     currentList = allitems;
-    disableScroll(    $('#realEstateMap .header'));
+    disableScroll(    $('#loc .header'));
     disableScroll(    $('.listContainer .top'));
     sortList(list);;
     showListInPage(list);
@@ -40,19 +45,9 @@ function setEVAList(list){
 }
 function disableScroll(element){
     element.bind('mousewheel DOMMouseScroll', function(e) {
-        var scrollTo = null;
-    
-        if (e.type == 'mousewheel') {
-            scrollTo = (e.originalEvent.wheelDelta * -1);
-        }
-        else if (e.type == 'DOMMouseScroll') {
-            scrollTo = 40 * e.originalEvent.detail;
-        }
-    
-        if (scrollTo) {
-            e.preventDefault();
-            $(this).scrollTop(scrollTo + $(this).scrollTop());
-        }
+        e.preventDefault();
+        console.log("1");
+
     })
 }
 
@@ -161,130 +156,190 @@ function showListInPage(list){
     //Clean container
     let parent = document.getElementById("padsContainer");
     parent.innerHTML = "";
-    for(let i = 0; i < list.length; i++){
-        let pad = list[i];
 
-        let padCard = document.createElement("div");
-        padCard.className = "pad-card";
+    if(list.length > 0){
+        $('#empty-list').css('display','none');
 
-        //Top Of card
-        let padImages = document.createElement("div");
-        padImages.className = "padImages";
+        for(let i = 0; i < list.length; i++){
+            let pad = list[i];
+    
+            let padCard = document.createElement("div");
+            padCard.className = "pad-card";
+    
+            //Top Of card
+            let padImages = document.createElement("div");
+            padImages.className = "padImages";
+    
+            let padImg = document.createElement('img');
+            padImg.className = "padImage";
+            padImg.src = pad.img;
+    
+            padImages.append(padImg);
+            padCard.append(padImages);
+    
+            //Bot of Card
+            let padInfo = document.createElement('div');
+            padInfo.className = "pad-info";
+    
+            let infoRow1 = document.createElement('div');
+            infoRow1.className = "info-row";
+            let span1 = document.createElement("span");
+            span1.innerHTML = "For Sale";
+            let span2 = document.createElement("span");
+            span2.innerHTML = pad.type;
+    
+            infoRow1.append(span1);
+            infoRow1.append(span2);
+    
+            let infoRow2 = document.createElement('div');
+            infoRow2.className = "info-row";
+            let priceSpan = document.createElement('span');
+            priceSpan.innerHTML = "€ " + pad.price;
+            infoRow2.append(priceSpan);
+    
+            let infoRow3 = document.createElement('div');
+            infoRow3.className = "info-row";
+    
+            let info = document.createElement('info');
+            info.className = "info";
+            let bedroomsSpan = document.createElement('span');
+            bedroomsSpan.innerHTML = pad.bedrooms;
+            let iconBedrooms = document.createElement('img');
+            iconBedrooms.src = "Resources/Icons/bedroom-grey.png";
+            info.append(bedroomsSpan);
+            info.append(iconBedrooms);
+    
+            let info2 = document.createElement('info');
+            info2.className = "info";
+            let bathRoomsSpan = document.createElement('span');
+            bathRoomsSpan.innerHTML = pad.bathrooms;
+            let iconBathRooms = document.createElement('img');
+            iconBathRooms.src = "Resources/Icons/bath-grey.png";
+            info2.append(bathRoomsSpan);
+            info2.append(iconBathRooms);
+            
+            let info3 = document.createElement('info');
+            info3.className = "info";
+            let surfaceSpan = document.createElement('span');
+            surfaceSpan.innerHTML = pad.livSurface + ' m²';
+            info3.append(surfaceSpan);
+    
+            infoRow3.append(info);
+            infoRow3.append(info2);
+            infoRow3.append(info3);
+    
+            let infoRow4 = document.createElement('div');
+            infoRow4.className = "info-row";
+    
+            let streetSpan = document.createElement('span');
+            streetSpan.innerHTML = pad.adress;
+            let citySpan = document.createElement('span');
+            citySpan.innerHTML = pad.city;
+    
+            infoRow4.append(streetSpan);
+            infoRow4.append(citySpan);
+    
+            padInfo.append(infoRow1);
+            padInfo.append(infoRow2);
+            padInfo.append(infoRow3);
+            padInfo.append(infoRow4);
+            padCard.append(padInfo);
 
-        let padImg = document.createElement('img');
-        padImg.className = "padImage";
-        padImg.src = pad.img;
+            //Tag
+            let tag = document.createElement('span');
+            tag.className = 'tag';
+            let clickable = true;
 
-        padImages.append(padImg);
-        padCard.append(padImages);
+            switch(pad.purposes[0].purposeId){
+                case 3:
+                    tag.innerHTML=  'Sold';
+                    padCard.append(tag);
+                    clickable = false;
+                    break;
+                case 5:
+                    tag.innerHTML = 'Option';
+                    padCard.append(tag);
+                    clickable = false;
+                    break;
+            }
 
-        //Bot of Card
-        let padInfo = document.createElement('div');
-        padInfo.className = "pad-info";
+            //Marker on map
+            let marker = addMarkerToMap(pad);
+            
+            padCard.onmouseenter = function(){
+                map.flyTo({
+                    center: [
+                    pad.localisation[0],
+                    pad.localisation[1] 
+                    ],
+                    essential: true,
+                    zoom: 14
+                    });
+                    setTimeout(function(){
+                        marker.click();
+                    }, 600);
+            };
 
-        let infoRow1 = document.createElement('div');
-        infoRow1.className = "info-row";
-        let span1 = document.createElement("span");
-        span1.innerHTML = "For Sale";
-        let span2 = document.createElement("span");
-        span2.innerHTML = pad.type;
+            //TODO
+            if(clickable){
+                padCard.onclick = function(){
 
-        infoRow1.append(span1);
-        infoRow1.append(span2);
+                }
+            }
 
-        let infoRow2 = document.createElement('div');
-        infoRow2.className = "info-row";
-        let priceSpan = document.createElement('span');
-        priceSpan.innerHTML = "€ " + pad.price;
-        infoRow2.append(priceSpan);
 
-        let infoRow3 = document.createElement('div');
-        infoRow3.className = "info-row";
-
-        let info = document.createElement('info');
-        info.className = "info";
-        let bedroomsSpan = document.createElement('span');
-        bedroomsSpan.innerHTML = pad.bedrooms;
-        let iconBedrooms = document.createElement('img');
-        iconBedrooms.src = "Resources/Icons/bedroom-grey.png";
-        info.append(bedroomsSpan);
-        info.append(iconBedrooms);
-
-        let info2 = document.createElement('info');
-        info2.className = "info";
-        let bathRoomsSpan = document.createElement('span');
-        bathRoomsSpan.innerHTML = pad.bathrooms;
-        let iconBathRooms = document.createElement('img');
-        iconBathRooms.src = "Resources/Icons/bath-grey.png";
-        info2.append(bathRoomsSpan);
-        info2.append(iconBathRooms);
-        
-        let info3 = document.createElement('info');
-        info3.className = "info";
-        let surfaceSpan = document.createElement('span');
-        surfaceSpan.innerHTML = pad.livSurface + ' m²';
-        info3.append(surfaceSpan);
-
-        infoRow3.append(info);
-        infoRow3.append(info2);
-        infoRow3.append(info3);
-
-        let infoRow4 = document.createElement('div');
-        infoRow4.className = "info-row";
-
-        let streetSpan = document.createElement('span');
-        streetSpan.innerHTML = pad.adress;
-        let citySpan = document.createElement('span');
-        citySpan.innerHTML = pad.city;
-
-        infoRow4.append(streetSpan);
-        infoRow4.append(citySpan);
-
-        padInfo.append(infoRow1);
-        padInfo.append(infoRow2);
-        padInfo.append(infoRow3);
-        padInfo.append(infoRow4);
-        padCard.append(padInfo);
-        let marker = addMarkerToMap(pad);
-
-        padCard.onmouseenter = function(){
-            marker.click();
-            map.flyTo({
-                center: [
-                pad.localisation[0],
-                pad.localisation[1] 
-                ],
-                essential: true
-                });
-        };
-
-        //Location icon
-        let location = document.createElement('img');
-        location.src = "Resources/Icons/location.png";
-        location.className = "locationIcon";
-        location.onclick = function(){
-            marker.click();
-            map.flyTo({
-                center: [
-                pad.localisation[0],
-                pad.localisation[1] 
-                ],
-                essential: true
-                });
+    
+            //Location icon
+            let location = document.createElement('img');
+            location.src = "Resources/Icons/location.png";
+            location.className = "locationIcon";
+            location.onclick = function(){            
+                flyToLocation(pad.localisation[0],
+                    pad.localisation[1] );
+                setTimeout(function(){
+                    marker.click();
+                }, 600);
+            }
+            padInfo.append(location);
+    
+            parent.append(padCard);
         }
-        padInfo.append(location);
-
-        parent.append(padCard);
+     
     }
- 
+    else{
+        $('#empty-list').css('display','flex');
+    }
+}
+
+function flyToLocation(x,y, z){
+    if(z === "undefined"){
+        z = 13
+    };
+
+    map.flyTo({
+        center: [
+            x,y
+        ],
+        essential: true,
+        });
 }
 
 function initEventHandlers(){
     //Search by city
     document.getElementById('streetSearch').addEventListener('input', function (evt) {
         //Filter
-         addFilter('city', this.value);
+         addFilter('city', this.value.toLowerCase(9));
+         if(this.value.length > 3 && currentList.length > 0){
+            let coordinates = getCoordinatesOfCity(this.value);
+            console.log(coordinates);
+            if(coordinates)
+              flyToLocation(coordinates[0], coordinates[1], 12);
+         }
     });
+}
+
+function getCoordinatesOfCity(){
+    return currentList[0].localisation;
 }
 
 function closeDropDown(){

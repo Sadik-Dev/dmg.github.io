@@ -2,28 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 /*Base Configuration*/
-html{
+html {
     scroll-behavior: smooth;
 }
-:root{
+
+:root {
     --orange: #E79D6C;
     --lightOrange: #E79D6C;
     --grey: #818386;
 }
-a:visited, a:active{
+
+a:visited, a:active {
     color: inherit;
 }
-a:hover{
+
+a:hover {
     cursor: pointer;
 }
-body{
+
+body {
     font-family: 'Merriweather', serif;
     font-family: 'KoHo', sans-serif;
 }
 
 /*Loading Screen*/
 
-.loadingScreen{
+.loadingScreen {
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -35,41 +39,64 @@ body{
     align-items: center;
     justify-content: center;
 }
-.loadingScreen .logo{
-    width: 200px;
-    height: auto;
-}
+
+    .loadingScreen .logo {
+        width: 200px;
+        height: auto;
+    }
+
 #loader {
     /* Uncomment this to make it run! */
     /*
        animation: loader 5s linear infinite; 
     */
-    
-   position: relative;
-  }
-  @keyframes loader {
-    0% { left: -100px }
-    100% { left: 110%; }
-  }
-  #box {
+
+    position: relative;
+}
+
+@keyframes loader {
+    0% {
+        left: -100px
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+#box {
     width: 50px;
     height: 50px;
     background: var(--lightOrange);
     animation: animate .5s linear infinite;
     margin-top: 50px;
     border-radius: 3px;
-  }
-  @keyframes animate {
-    17% { border-bottom-right-radius: 3px; }
-    25% { transform: translateY(9px) rotate(22.5deg); }
-    50% {
-      transform: translateY(18px) scale(1,.9) rotate(45deg) ;
-      border-bottom-right-radius: 40px;
+}
+
+@keyframes animate {
+    17% {
+        border-bottom-right-radius: 3px;
     }
-    75% { transform: translateY(9px) rotate(67.5deg); }
-    100% { transform: translateY(0) rotate(90deg); }
-  } 
-  #shadow { 
+
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        transform: translateY(18px) scale(1,.9) rotate(45deg);
+        border-bottom-right-radius: 40px;
+    }
+
+    75% {
+        transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+#shadow {
     width: 50px;
     height: 5px;
     background: #000;
@@ -79,37 +106,35 @@ body{
     left: 0;
     border-radius: 50%;
     animation: shadow .5s linear infinite;
-  }
-  @keyframes shadow {
+}
+
+@keyframes shadow {
     50% {
-      transform: scale(1.2,1);
+        transform: scale(1.2,1);
     }
-  }
-  
+}
+
 /*_____________________________________________
 ___________LANDINGPAGE AND HEADER 
 */
 
-header .logo{
+header .logo {
     width: 110px;
     margin: 1vh 0 0 4%;
-    
 }
 
 
-header{
+header {
     margin-top: 2vh;
     display: flex;
     height: 18vh;
     flex-direction: row;
     justify-content: space-between;
-    overflow: hidden;
     width: 100%;
     color: white;
-
 }
 
-.bigImg{
+.bigImg {
     position: absolute;
     width: auto;
     height: 100vh;
@@ -118,7 +143,7 @@ header{
     z-index: -1;
 }
 
-.landingpage{
+.landingpage {
     background: rgba(0, 0, 0, 0.5);
     height: 100vh;
     width: 100%;
@@ -126,7 +151,7 @@ header{
     position: relative;
 }
 
-header nav{
+header nav {
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -134,30 +159,71 @@ header nav{
     margin: auto 5vh auto 0;
 }
 
-header nav a{
-    text-decoration: none;
-    font-size: 1.3em;
-    color: white;
-    margin: auto 2vh auto 2vh;
-    font-weight: 400;
+    header nav a {
+        text-decoration: none;
+        font-size: 1.3em;
+        color: white;
+        margin: auto 2vh auto 2vh;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    header nav a img {
+      width: 25px;
+      margin-right: 6px;
+      opacity: .6;
+    }
+
+.flexRow2 {
+    display: none;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: 50px;
 }
 
-.contactBT{
+.lang {
+    border: 1px solid transparent;
+    width: 35px;
+    height: 35px;
+    box-shadow: none;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+    .lang img {
+        width: 100%;
+    }
+
+    .lang .dropdown-content span {
+        color: white;
+        font-size: 1.8em;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+        .lang .dropdown-content span:hover {
+            transform: scale(1.1);
+            transition-duration: 0.5s;
+        }
+
+.contactBT {
     background: #DD7430;
     padding: 1vh 2vh 1vh 2vh;
     box-shadow: #00000073 6px 3px 20px;
     border: 2px solid #DD7430;
-
 }
 
-.contactBT:hover{
-    background: none;
-    padding: 1vh 2vh 1vh 2vh;
-    border: 2px solid #DD7430;
-    transition-duration: 0.5s;
-}
+    .contactBT:hover {
+        background: none;
+        padding: 1vh 2vh 1vh 2vh;
+        border: 2px solid #DD7430;
+        transition-duration: 0.5s;
+    }
 
-.landingpage h1{
+.landingpage h1 {
     font-size: 3.5em;
     margin: 5% 0 0 7%;
     color: white;
@@ -166,10 +232,9 @@ header nav a{
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1.3em;
-
 }
 
-.searchbar{
+.searchbar {
     display: flex;
     flex-direction: row;
     width: 80%;
@@ -180,44 +245,48 @@ header nav a{
     background: rgba(255,255,255,0.3);
     padding: 0 0 0 1%;
     margin: 5% 0 0 7%;
-    
-}
-.searchbar div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-right: 1px solid rgba(255,255,255,0.5);;
-    padding-right: 20px;
-    padding-left: 20px;
-    height: 100%;
-}
-.searchbar div:hover{
-    cursor: pointer;
-}
-.searchbar div p{
-    font-size: 1.3em;
 }
 
-.SellOrBuy{
+    .searchbar div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-right: 1px solid rgba(255,255,255,0.5);
+        ;
+        padding-right: 20px;
+        padding-left: 20px;
+        height: 100%;
+    }
+
+        .searchbar div:hover {
+            cursor: pointer;
+        }
+
+        .searchbar div p {
+            font-size: 1.3em;
+        }
+
+.SellOrBuy {
     width: 20%;
 }
 
-.Type{
+.Type {
     width: 20%;
 }
-.searchbar .Location{
+
+.searchbar .Location {
     width: 60%;
     justify-content: left;
     border: none;
 }
 
-.searchbar .Location img{
-    width: 50px;
-    height: 50px;
-}
+    .searchbar .Location img {
+        width: 50px;
+        height: 50px;
+    }
 
-.searchbar .buttonSearch{
+.searchbar .buttonSearch {
     width: 16vh;
     justify-content: left;
     border-right: none;
@@ -225,25 +294,23 @@ header nav a{
     padding-right: 50px;
 }
 
-.searchbar .Location img, .searchbar .buttonSearch img{
-    margin-right: 20px;
-}
+    .searchbar .Location img, .searchbar .buttonSearch img {
+        margin-right: 20px;
+    }
 
 .searchbar div img {
     width: 30px;
     height: 30px;
-
 }
 
 .searchbar div .right {
-
 }
 
 
 /*_____________________________________________
 ___________Choose type of property
 */
-.typeOfProperty{
+.typeOfProperty {
     height: fit-content;
     position: relative;
     background: rgb(31, 31, 31);
@@ -251,24 +318,24 @@ ___________Choose type of property
 
 
 
-.typeOfProperty .pageHead{
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    
+    .typeOfProperty .pageHead {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+    }
 
-}
-.typeOfProperty .pageHead h1{
-    padding: 5vh 0 4vh 0;
-    font-size: 2em;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    color:  rgba(255, 255, 255, 0.61);
-    opacity: 0.6;
-    margin: 2% 0 2%;
-}
-.cardContainer{
+        .typeOfProperty .pageHead h1 {
+            padding: 5vh 0 4vh 0;
+            font-size: 2em;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.61);
+            opacity: 0.6;
+            margin: 2% 0 2%;
+        }
+
+.cardContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -277,7 +344,8 @@ ___________Choose type of property
     flex-wrap: wrap;
     justify-content: center;
 }
-.card{
+
+.card {
     width: 33%;
     z-index: 2;
     border-radius: 0px;
@@ -289,42 +357,37 @@ ___________Choose type of property
     overflow: hidden;
     background-color: black;
     transition-duration: 0.5s;
-
 }
 
-.card img{
-    overflow: hidden;
-    width: auto;
-    height: 100%;
-    min-width: 100%;
-    opacity: 0.6;
-    z-index: -1;
+    .card img {
+        overflow: hidden;
+        width: auto;
+        height: 100%;
+        min-width: 100%;
+        opacity: 0.6;
+        z-index: -1;
+    }
 
-    
-    
-
-}
- 
-.card h3{
-    color: white;
-    font-size: 2.7rem;
-    margin: 3vh 0 3vh 2vh;
-    position: absolute;
-    z-index: 100;
-    font-weight: bold;
-    text-transform: uppercase;
-    user-select: none;
-}
+    .card h3 {
+        color: white;
+        font-size: 2.7rem;
+        margin: 3vh 0 3vh 2vh;
+        position: absolute;
+        z-index: 100;
+        font-weight: bold;
+        text-transform: uppercase;
+        user-select: none;
+    }
 
 
 
 
 
 
-.card:hover  img{
-    opacity: 0.9;
-    cursor: pointer;
-}
+    .card:hover img {
+        opacity: 0.9;
+        cursor: pointer;
+    }
 
 
 
@@ -334,7 +397,7 @@ ___________Choose type of property
 /*_____________________________________________
 ___________Section what we do
 */
-.whatwedo{
+.whatwedo {
     height: auto;
     width: 100%;
     display: flex;
@@ -346,7 +409,8 @@ ___________Section what we do
     justify-content: space-between;
     align-items: center;
 }
-.imageBg{
+
+.imageBg {
     position: absolute;
     height: auto;
     width: 100%;
@@ -354,35 +418,35 @@ ___________Section what we do
     opacity: 0.1;
 }
 
-.fadingImageContainer{
+.fadingImageContainer {
     width: 40%;
     z-index: 1;
     position: relative;
 }
-.fadingImageContainer img:hover{
-    cursor: pointer;
-}
-.fadingImageContainer img{
-    width: 100%;
-    opacity: 0.4;
-    display: flex;
-}
-.fadingImageContainer img:nth-child(1)
-{
-    margin-bottom: 20%;
-   
-}
-.fadingImageContainer img:nth-child(2)
-{
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    opacity: 1;
-    transition-duration: 0.5s;
 
+    .fadingImageContainer img:hover {
+        cursor: pointer;
+    }
 
-}
-.whatwedo .textContainer{
+    .fadingImageContainer img {
+        width: 100%;
+        opacity: 0.4;
+        display: flex;
+    }
+
+        .fadingImageContainer img:nth-child(1) {
+            margin-bottom: 20%;
+        }
+
+        .fadingImageContainer img:nth-child(2) {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            opacity: 1;
+            transition-duration: 0.5s;
+        }
+
+.whatwedo .textContainer {
     width: 40%;
     margin: auto;
     margin-top: 10%;
@@ -390,27 +454,31 @@ ___________Section what we do
     flex-direction: column;
     z-index: 1;
     color: white;
-
 }
-.textContainer{
+
+.textContainer {
     position: relative;
 }
-.textContainer h2{
-    font-size: 3em;
-    font-weight: 600;
-    margin-bottom: 5%;
-}
-.textContainer p{
-    font-size: 1.8em;
-    font-weight: 400;
-    line-height: 1.4em;
-    margin-bottom: 3%;
-}
-.textContainer a{
-    color: var(--lightOrange);
-    font-size: 1.8em;
-}
-.verticalLine{
+
+    .textContainer h2 {
+        font-size: 3em;
+        font-weight: 600;
+        margin-bottom: 5%;
+    }
+
+    .textContainer p {
+        font-size: 1.8em;
+        font-weight: 400;
+        line-height: 1.4em;
+        margin-bottom: 3%;
+    }
+
+    .textContainer a {
+        color: var(--lightOrange);
+        font-size: 1.8em;
+    }
+
+.verticalLine {
     height: 100%;
     width: 2px;
     background: var(--lightOrange);
@@ -419,7 +487,7 @@ ___________Section what we do
 }
 
 /*Exclusive Properties*/
-.exclusiveProperties{
+.exclusiveProperties {
     height: 100vh;
     width: 100%;
     position: relative;
@@ -427,10 +495,12 @@ ___________Section what we do
     z-index: 2;
     scroll-behavior: smooth;
 }
-.plusshape{
+
+.plusshape {
     opacity: .5;
 }
-.exclusiveProperties h2{
+
+.exclusiveProperties h2 {
     font-size: 2.2em;
     font-weight: 400;
     width: 94%;
@@ -438,7 +508,8 @@ ___________Section what we do
     margin-bottom: 5%;
     margin-top: 1%;
 }
-.propertiesContainer{
+
+.propertiesContainer {
     display: flex;
     width: 98%;
     margin: auto;
@@ -446,60 +517,63 @@ ___________Section what we do
     scroll-behavior: smooth;
     padding: 20px 0 20px 0;
 }
-/* width */
-.propertiesContainer::-webkit-scrollbar {
-    width: 2px;
-    height: 0px;
-  }
-  
-  /* Track */
-  .propertiesContainer::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-.propertiesContainer::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  /* Handle on hover */
-.propertiesContainer::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+    /* width */
+    .propertiesContainer::-webkit-scrollbar {
+        width: 2px;
+        height: 0px;
+    }
 
-.propertiesContainer .empty{
-    height: inherit;
-    box-shadow: none;
-}
+    /* Track */
+    .propertiesContainer::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
-.property{
+    /* Handle */
+    .propertiesContainer::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+        /* Handle on hover */
+        .propertiesContainer::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    .propertiesContainer .empty {
+        height: inherit;
+        box-shadow: none;
+    }
+
+.property {
     width: 40%;
     min-width: 40%;
     position: relative;
     z-index: 1;
-    box-shadow: 3px 3px 20px 0px #00000024;    height: fit-content;
+    box-shadow: 3px 3px 20px 0px #00000024;
+    height: fit-content;
     margin-right: 10%;
-
 }
 
-.property:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    transition-duration: 0.5s;
-}
-.property > img{
-    width: 100%;
-}
-.property .propFoot{
-    position: absolute;
-    display: flex;
-    bottom: 0px;
-    height: 25%;
-    color: white;
-    width: 100%;
-    background: rgba(39, 39, 39, 0.514);
-}
-.footVector{
+    .property:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+    }
+
+    .property > img {
+        width: 100%;
+    }
+
+    .property .propFoot {
+        position: absolute;
+        display: flex;
+        bottom: 0px;
+        height: 25%;
+        color: white;
+        width: 100%;
+        background: rgba(39, 39, 39, 0.514);
+    }
+
+.footVector {
     width: 300px;
     height: auto;
     bottom: 0%;
@@ -507,104 +581,114 @@ ___________Section what we do
     position: absolute;
     opacity: .4;
 }
-.propIntro{
+
+.propIntro {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 80%;
 }
-.propIntro p:nth-child(1){
-    font-weight: 400;
-    margin-left: 5%;
-    font-size: 1.2em;
-}
-.propIntro p:nth-child(2){
-    font-weight: 400;
-    margin-left: 5%;
-    font-size: 2em;
-}
-.propAttribute{
+
+    .propIntro p:nth-child(1) {
+        font-weight: 400;
+        margin-left: 5%;
+        font-size: 1.2em;
+    }
+
+    .propIntro p:nth-child(2) {
+        font-weight: 400;
+        margin-left: 5%;
+        font-size: 2em;
+    }
+
+.propAttribute {
     display: flex;
     margin: auto;
     margin-right: 5%;
 }
-.propAttribute img{
-    width: auto;
-    height: 30px;
-    margin: auto;
-    margin-right: 15%;
-}
-.propAttribute p{
-    font-size: 1.3em;
-    font-weight: 300;
-    margin: auto;
 
-}
-.propertiesSC{
+    .propAttribute img {
+        width: auto;
+        height: 30px;
+        margin: auto;
+        margin-right: 15%;
+    }
+
+    .propAttribute p {
+        font-size: 1.3em;
+        font-weight: 300;
+        margin: auto;
+    }
+
+.propertiesSC {
     width: fit-content;
     margin: auto;
     margin-top: 1%;
     display: flex;
-
 }
-.shortcut{
+
+.shortcut {
     width: 15px;
     height: 15px;
     clip-path: circle(50% at 50% 50%);
     background: #d6d6d6ab;
     margin-right: 15px;
 }
-.shortcut:hover{
-    cursor: pointer;
-    background: #d6d6d6;
 
-}
+    .shortcut:hover {
+        cursor: pointer;
+        background: #d6d6d6;
+    }
 
 
 /*endOfPage*/
 
-.endOfPage{
+.endOfPage {
     overflow-y: visible;
     height: 74vh;
     width: 100%;
     position: relative;
 }
-.endOfPage .successStory{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: space-around;
-    align-items: center;
-}
-.successStory .story{
+
+    .endOfPage .successStory {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 5%;
+        width: 90%;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+.successStory .story {
     width: 300px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
 }
-.story img{
+
+.story img {
     width: 90px;
     height: auto;
 }
-.story .numberBig{
+
+.story .numberBig {
     font-size: 1.5em;
     margin: 3% auto 5% auto;
 }
-.story p{
+
+.story p {
     color: #E79D6C;
     font-weight: 500;
     font-size: 1.1em;
 }
 
 /*Form*/
-.mainForm{
+.mainForm {
     margin: auto;
     margin-top: 5%;
     width: 70%;
@@ -622,7 +706,8 @@ ___________Section what we do
     margin: auto;
     clip-path: polygon(95% 0, 100% 11%, 100% 100%, 0 100%, 0 0);
 }
-.bg-cover{
+
+.bg-cover {
     width: 100%;
     height: auto;
     z-index: 0;
@@ -634,33 +719,38 @@ ___________Section what we do
     margin: auto;
     opacity: .1;
 }
-.mainForm .info{
+
+.mainForm .info {
     width: 30%;
     position: relative;
     z-index: 1;
     height: 80%;
 }
-.mainForm .info .whiteLine{
-    width: 4px;
-    height: 100%;
-    position: absolute;
-    left: -5%;
-    top: 0;
-    background: white;
-}
-.mainForm .info h2{
-    font-size: 2em;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 5%;
-    margin-top: 2%;
-    text-transform: uppercase;
-}
-.mainForm .info p {
-    color: white;
-    font-size: 1.1em;
-    line-height: 1.5em;
-}
+
+    .mainForm .info .whiteLine {
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        left: -5%;
+        top: 0;
+        background: white;
+    }
+
+    .mainForm .info h2 {
+        font-size: 2em;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 5%;
+        margin-top: 2%;
+        text-transform: uppercase;
+    }
+
+    .mainForm .info p {
+        color: white;
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -668,7 +758,7 @@ button:focus {
     outline: none;
 }
 
-.mainForm .inputs{
+.mainForm .inputs {
     width: 30%;
     height: 60%;
     display: flex;
@@ -678,22 +768,24 @@ button:focus {
     justify-content: space-between;
     z-index: 1;
 }
-.mainForm input{
+
+.mainForm input {
     padding: 10px;
     border: 1px solid var(--orange);
     font-size: 1.1em;
     border-radius: 3px;
     background: white;
     height: 30px;
+}
 
-}
-.mainForm input:focus{
-    border: 1px solid var(--grey);
-}
-.mainForm input::placeholder{
+    .mainForm input:focus {
+        border: 1px solid var(--grey);
+    }
 
-}
-.mainForm button{
+    .mainForm input::placeholder {
+    }
+
+.mainForm button {
     height: 50px;
     border: 2px solid black;
     background: black;
@@ -701,7 +793,8 @@ button:focus {
     font-size: 1.2em;
     font-weight: 500;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
     transition-duration: 0.5s;
     border: 2px solid white;
@@ -709,12 +802,12 @@ button:hover{
     color: white;
 }
 /*Footer*/
-footer{
+footer {
     background: rgba(0, 0, 0, 0.884);
     color: white;
 }
 
-.flexRow{
+.flexRow {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -722,98 +815,311 @@ footer{
     margin: auto;
     justify-content: space-between;
 }
-.compIntro img{ 
+
+.compIntro img {
     width: 40%;
     margin-bottom: 9%;
 }
-.compIntro p{
+
+.compIntro p {
     font-size: 1em;
     line-height: 1.8em;
 }
-.footCont .flexCol{
+
+.footCont .flexCol {
     width: 22%;
 }
-.footCont .flexCol h3{
-    font-weight: 600;
-    font-size: 1.3em;
-    margin-bottom: 10%;
-}
-.footCont .sitemap a{
+
+    .footCont .flexCol h3 {
+        font-weight: 600;
+        font-size: 1.3em;
+        margin-bottom: 10%;
+    }
+
+.footCont .sitemap a {
     color: rgba(255, 255, 255, 0.692);
     margin-bottom: 5%;
     font-size: 1.1em;
-} 
-.gegevens p{
+}
+
+.gegevens p {
     margin-bottom: 5%;
     font-size: 1em;
     height: fit-content;
     display: flex;
+    color: white;
+    text-decoration: none;
 }
 
-.gegevens p img{
+a {
+    text-decoration: none;
+}
+
+.gegevens p:link, .gegevens p:visited {
+    color: white;
+}
+
+.gegevens p:hover {
+    color: white;
+}
+
+.gegevens p img {
     height: 30px;
     width: 30px;
     align-content: center;
     margin-right: 10px;
 }
-.openingsuur{
+
+.openingsuur {
     display: flex;
     flex-direction: row;
-    text-transform: uppercase ;
-
-}
-.openingsuur p:nth-child(1){
-    color: var(--orange);
-    margin-right: 20px;
+    text-transform: uppercase;
 }
 
-.flexCol{
+    .openingsuur p:nth-child(1) {
+        color: var(--orange);
+        margin-right: 20px;
+    }
+
+.flexCol {
     display: flex;
     flex-direction: column;
 }
 
 
-.footCont{
+.footCont {
     padding-top: 30%;
 }
 
-.footfoot{
+.footfoot {
     padding: 5% 0 5%;
 }
-.footfoot .socialmedia img{
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    opacity: .8;
+
+    .footfoot .socialmedia img {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        opacity: .8;
+    }
+
+.menuB {
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    display: flex;
 }
 
-/*4K*/
-@media (min-width: 3800px){
+    .menuB:hover {
+        cursor: pointer;
+    }
 
+    .menuB img {
+        width: 100%;
+    }
+
+.menuWrapper {
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    overflow: hidden;
+}
+
+    .menuWrapper .menu {
+        width: 50%;
+        min-width: 350px;
+        background: #1E1E1E;
+        box-shadow: 5px 2px 16px #000000bd;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .menuWrapper .menu .header {
+            width: 90%;
+            margin: 20px auto 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            .menuWrapper .menu .header img {
+                height: 50px;
+                width: auto;
+                opacity: .8;
+            }
+
+        .menuWrapper .menu .body {
+            width: 90%;
+            margin: 40px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+            .menuWrapper .menu .body a {
+                color: white;
+                font-size: 1.5em;
+                padding: 15px;
+                font-weight: 400;
+                text-transform: lowercase;
+            }
+
+            .menuWrapper .menu .body .current {
+                /*  border-bottom: 1px solid #E79D6C;*/
+                color: #E79D6C;
+            }
+
+        .menuWrapper .menu .footer {
+            width: 90%;
+            margin: 40px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+            .menuWrapper .menu .footer a {
+                color: #ffffff61;
+                font-size: 1.5em;
+                padding: 15px;
+                font-weight: 400;
+                text-transform: lowercase;
+            }
+
+    .menuWrapper .hidder {
+        width: 50%;
+        background: rgb(24 23 23 / 62%);
+        z-index: 10;
+    }
+
+/*4K*/
+@media (min-width: 3800px) {
 }
 
 /*2K*/
-@media (min-width: 2560px){
-
+@media (min-width: 2560px) {
 }
 
 /*Full HD*/
-@media (min-width: 1900px){
-    .bigImg{
+@media (min-width: 1900px) {
+    .bigImg {
         min-width: 100%;
     }
-    .landingpage h1{
+
+    .landingpage h1 {
         width: 67%;
     }
-    .searchbar{
+
+    .searchbar {
         width: 60%;
     }
-    .whatwedo{
+
+    .whatwedo {
         height: 100vh;
     }
-    .footCont{
+
+    .footCont {
         padding-top: 10%;
     }
-    
 }
 
+@media (max-width: 1200px) {
+    .endOfPage {
+        height: 100vh;
+    }
+
+    .successStory .story {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mainForm .info {
+        width: 40%;
+    }
+
+    .mainForm .inputs {
+        width: 40%;
+    }
+
+    .footCont .flexCol {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 880px) {
+    header nav {
+        display: none;
+    }
+
+    header .flexRow2 {
+        display: flex;
+    }
+}
+
+@media (max-width: 700px) {
+    .successStory .story {
+        width: 200px;
+        height: 200px;
+        font-size: 1em;
+    }
+
+    .mainForm {
+        margin: auto;
+        margin-top: 5%;
+        width: 90%;
+    }
+
+    .story p {
+        color: #E79D6C;
+        font-weight: 500;
+        font-size: .9em;
+        text-align: center;
+    }
+
+    .endOfPage .successStory {
+        margin-top: 100px
+    }
+
+    .mainForm {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+        clip-path: polygon(92% 0, 100% 11%, 100% 100%, 0 100%, 0 0);
+    }
+
+        .mainForm .info {
+            width: 80%;
+            margin-top: 40px;
+        }
+
+        .mainForm .inputs {
+            width: 90%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .mainForm input {
+            margin-bottom: 10px;
+        }
+
+    .bg-cover {
+        width: auto;
+        height: 100%;
+    }
+
+    .bigImg {
+        height: 100%;
+        width: auto;
+    }
+
+    .endOfPage {
+        height: 160vh;
+    }
+
+        .endOfPage .successStory {
+            flex-direction: column;
+        }
+}
