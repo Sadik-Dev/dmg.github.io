@@ -135,16 +135,35 @@ header {
 }
 
 .bigImg {
-    position: absolute;
+    position: relative;
     width: auto;
-    height: 100vh;
-    width: 100%;
+    height: 50vh;
+    width: 90%;
+    left: 0;
+    right: 0;
     top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 0;
+    background-image: url("/Resources/Images/people-negotiating-about-blueprint-house.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bigImg #absBG{
+    width: 100%;
+    height: auto;
+    opacity: .7;
     z-index: -1;
+    position: absolute;
 }
 
 .landingpage {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0);
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -162,11 +181,17 @@ header nav {
     header nav a {
         text-decoration: none;
         font-size: 1.3em;
-        color: white;
+        color: rgb(0, 0, 0);
         margin: auto 2vh auto 2vh;
         font-weight: 500;
         display: flex;
         align-items: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-bottom: 2px solid transparent;
+    }
+    header nav a span{
+        color: #000000c4;
     }
 
     header nav a img {
@@ -174,6 +199,10 @@ header nav {
       margin-right: 6px;
       opacity: .6;
     }
+    header nav a:hover {
+        border-bottom: 2px solid #E79D6C;
+        transition-duration: 0.5s;
+      }
 
 .flexRow2 {
     display: none;
@@ -210,53 +239,69 @@ header nav {
         }
 
 .contactBT {
-    background: #DD7430;
-    padding: 1vh 2vh 1vh 2vh;
-    box-shadow: #00000073 6px 3px 20px;
-    border: 2px solid #DD7430;
+    color: white;
+    box-shadow: #00000012 1px 2px 3px;
+    padding: 4px 9px 4px 9px;
+    background: #E79D6C;
+    border: 2px solid #E79D6C;
 }
 
     .contactBT:hover {
         background: none;
-        padding: 1vh 2vh 1vh 2vh;
         border: 2px solid #DD7430;
         transition-duration: 0.5s;
+        color: #DD7430;
     }
 
 .landingpage h1 {
     font-size: 3.5em;
-    margin: 5% 0 0 7%;
+    margin: 5% auto 0 auto;
     color: white;
-    width: 75%;
+    width: 70%;
     text-align: left;
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1.3em;
+    position: relative;
+    z-index: 1;
 }
 
 .searchbar {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
     color: white;
     text-align: left;
     height: 7vh;
     align-items: center;
-    background: rgba(255,255,255,0.3);
-    padding: 0 0 0 1%;
-    margin: 5% 0 0 7%;
+    background: rgb(0 0 0 / 30%);
+    padding: 0 0 0 0%;
+    margin: 5% auto 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-    .searchbar div {
+    .searchbar .wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         border-right: 1px solid rgba(255,255,255,0.5);
-        ;
         padding-right: 20px;
         padding-left: 20px;
         height: 100%;
+    }
+    .searchbar .dropdown{
+     position: relative;
+    display: flex;
+     padding: 0px;
+     border:none;
+    color: #ffffff;
+    align-content: center;
+    align-items: center;
+     font-weight: 400; 
+     font-size: 1.2em;
+    box-shadow: none;
     }
 
         .searchbar div:hover {
@@ -266,12 +311,56 @@ header nav {
         .searchbar div p {
             font-size: 1.3em;
         }
-
+        .searchbar .sort {
+            width: 15%;
+            font-size: 1.3em;
+            color: white;
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            text-align: left;
+            border-right: 1px solid rgba(255, 255, 255, 0.22è);
+            padding-right: 25px;
+                padding-left: 10px;
+          }
+          
+          .searchbar .sort img {
+            width: 22px;
+            height: auto;
+          }
+          
+          .searchbar .sort span {
+            width: 90%;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-weight: 400;
+            font-size: 1.1em;
+            padding-left: 10%;
+          }
+          .sort .dropdown-content span{
+              line-height: 2.4em;
+          }
+          .sort:hover .hoverA, .sort:hover{
+            background: rgb(0 0 0 / 30%);
+            border:1px solid rgba(255, 255, 255, 15%);
+            border-top: none;
+            color: white;
+            transition-duration: 0.5s;
+          }
 .SellOrBuy {
     width: 20%;
 }
 
-.Type {
+.searchbar .Type {
     width: 20%;
 }
 
@@ -280,21 +369,36 @@ header nav {
     justify-content: left;
     border: none;
 }
+.searchbar .Location input {
+    width: 100%;
+    height: 90%;
+    background: transparent;
+    justify-content: left;
+    font-size: 1.2em;
+    border: none;
+    font-weight: 400;
+    color: white;
+}
+.searchbar .Location input::placeholder{
+    color: #F4F4F4;
 
+}
     .searchbar .Location img {
         width: 50px;
         height: 50px;
     }
 
 .searchbar .buttonSearch {
-    width: 16vh;
+    width: 10%;
     justify-content: left;
     border-right: none;
-    background: #DD7430;
-    padding-right: 50px;
+    background: #da8852;
+    padding-right: 30px;
 }
-
-    .searchbar .Location img, .searchbar .buttonSearch img {
+.searchbar .buttonSearch img {
+    margin-left: 20px;
+}
+    .searchbar .Location img {
         margin-right: 20px;
     }
 
@@ -306,6 +410,47 @@ header nav {
 .searchbar div .right {
 }
 
+.homeCards{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto 0 auto;
+    justify-content: space-between;
+
+}
+
+.homeCards .homeCElement{
+    width: 250px;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #00000008 4px 5px 20px 9px;
+    padding: 30px;
+    border-radius: 5px;
+}
+.homeCards .homeCElement .head {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-weight: 500;
+    width: 100%;
+    font-size: 1.4em;
+    align-items: center;
+    margin-bottom:10px;
+}
+.homeCards .homeCElement .body{
+    color: rgba(0, 0, 0, 0.685);
+}
+.homeCards .homeCElement img{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    display: flex;
+    background: #E79D6C;
+    border-radius: 3px;
+    margin-right: 12px;
+}
 
 /*_____________________________________________
 ___________Choose type of property
@@ -313,7 +458,7 @@ ___________Choose type of property
 .typeOfProperty {
     height: fit-content;
     position: relative;
-    background: rgb(31, 31, 31);
+    background: rgb(255, 255, 255);
 }
 
 
@@ -330,7 +475,7 @@ ___________Choose type of property
             width: 100%;
             text-align: center;
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.61);
+            color: #555;
             opacity: 0.6;
             margin: 2% 0 2%;
         }
@@ -346,7 +491,7 @@ ___________Choose type of property
 }
 
 .card {
-    width: 33%;
+    width: 15%;
     z-index: 2;
     border-radius: 0px;
     height: 43vh;

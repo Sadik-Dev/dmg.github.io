@@ -107,6 +107,15 @@
       color: white;
   }
 
+  .dropdown-content span:hover{
+    background: #0077ff2c;
+
+  }
+  .dropdown-content .selected:hover {
+    background: #0075FF;
+    color: white;
+}
+
 .dropdown:hover .hoverA, .dropdown:hover {
   display: flex;
   border-top: none;

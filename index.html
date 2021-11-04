@@ -3,56 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <link rel="stylesheet" href="Resources/css/reset.css">
     <link rel="stylesheet" href="Resources/css/dropdown.css">
+    <link rel="stylesheet" href="Resources/css/reset.css">
     <link rel="stylesheet" href="Resources/css/home.css">
-    <link rel="stylesheet" href="Resources/css/padden.css">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="menuWrapper" id="menu">
-        <div class="menu" >
-            <div class="header">
-                <img src="Resources/Logo/Wit-DMG2.png" class="logoIcon">
-                <img src="Resources/Icons/close.png" class="close" id="closeMenu">
-            </div>
-            <div class="body">
-                    <a class="current">Home</a>
-                    <a>Kopen</a>
-                    <a>Huren</a>
-                    <a>Nieuwbouw</a>
-                    <a>Verkopen</a>
-                    <a>Verhuren</a>
-            </div>
-            <div class="footer">
-                <a>Over ons</a>
-                <a>Contact</a>
-            </div>
-        </div>
-        <div class="hidder">
-
-        </div>
-    </div>
-    <section class="landingpage head">
+    <section class="landingpage">
         <header>
-            <a class="logo"><img class="logo" src="Resources/Logo/logo-white.png" alt="DMGVastgoed" title="DMGVastgoed"></a>
-
+            <a class="logo"><img class="logo" src="Resources/Logo/logo.png" alt="DMGVastgoed" title="DMGVastgoed"></a>
             <nav >
-                <a href="#">Home</a>
-                <a href="#">Kopen</a>
-                <a href="#">Nieuwbouw</a>
-                <a href="#">Huren</a>
-                <a href="#">Verhuren</a>
-                <a href="#">Verkopen</a>
+                <a href="#">
+                    <img src="resources/Icons/start-icon.png">
+                    <span>Home</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/home-disattached.png">
+                    <span>Kopen</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/houses-black.png" >
+                    <span>Nieuwbouw</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rent.png">
+                    <span>Huren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rental.png">
+                    <span>Verhuren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/sell-estate.png">
+                    <span>Verkopen</span>
+                </a>
                 <a href="#" class="contactBT">Contact</a>
                 <div class="dropdown lang">
-                    <img src="resources/icons/world.png" class="">
+                    <img src="resources/icons/languages.png" class="">
                     <div class="dropdown-content hoverB">
                     <span>FR</span>
                     <span>NL</span> 
@@ -61,196 +50,276 @@
             </nav>
             <div class="flexRow2">
                 <div class="dropdown lang">
-                    <img src="resources/icons/world.png" class="">
+                    <img src="resources/icons/languages.png" class="">
                     <div class="dropdown-content hoverB">
                     <span>FR</span>
                     <span>NL</span> 
                     </div>
                   </div>
                   <div class="menuB">
-                    <img src="resources/icons/menu.png">
+                    <img src="resources/icons/menu-orange.png">
                 </div>
             </div>
-        
         </header>
-        <img src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.jpg" class="bigImg" alt="DMGVASTGOED">
-        <h1 id="pageTitle" data-aos="zoom-in" data-aos-delay="200" class="aos-init aos-animate">
-           70 panden te koop
-        </h1>
-        <div class="wrapper">
-            <a class="appGoButton jumpingElement" href="#realEstateMap">
-                <span>
-                   Begin je zoektocht nu
-                </span>
-                <img src="/Resources/Icons/rightbottomarrow.png">
-            </a>
+            <div class="bigImg">
+            <h1>The shortest distance between <br> paradise and the place you <br> call home</h1>    
+            <div class="searchbar" data-aos="fade-right" data-aos-delay="500">
+                <div class="dropdown dropdownValued sort">
+                    <span class="selectedValue"></span>
+                    <img src="Resources/Icons/expand-bot.png">
+                    <div class="dropdown-content hoverA">
+                        <span class="selected">Kopen</span>
+                        <span>Huren</span>
+                    </div>
+                  </div>
+                  <div class="dropdown dropdownValued sort Type">
+                    <span class="selectedValue"></span>
+                    <img src="Resources/Icons/expand-bot.png">
+                    <div class="dropdown-content hoverA">
+                        <span class="selected">Alle Types</span>
+                        <span>Huis</span>
+                        <span>Appartement</span>
+                        <span>Garage</span>
+                        <span>Industrieel</span>
+                        <span>Grond</span>
+                    </div>
+                  </div>
+                <div class="Location wrapper">
+                    <input type="text" placeholder="Zoek uw locatie..">
+                    <img src="Resources/Icons/location.webp" class="right">
+                </div>
+                <div class="buttonSearch wrapper">
+                    <p>Zoeken</p>
+                    <img src="Resources/Icons/search.webp" class="right">
+                </div>
+            </div>
         </div>
-   
+        <div class="homeCards">
+            <div class="homeCElement">
+                <div class="head">
+                    <img src="/Resources/Icons/star-white.png">
+                    <h3>Find your dream home</h3>
+                </div>
+                <div class="body">
+                    Lorem ip^sum galum tarum salem huch mapej elejrg eoihgezohi oegijhbn
+                </div>
+            </div>
+
+            <div class="homeCElement">
+                <div class="head">
+                    <img src="/Resources/Icons/guarantee.png">
+                    <h3>Our best home Guarantee</h3>
+                </div>
+                <div class="body">
+                    Lorem ip^sum galum tarum salem huch mapej elejrg eoihgezohi oegijhbn
+                </div>
+            </div>
+        </div>
     </section>
-   <section id="realEstateMap" class="locAZE">
-       <div class="header">
-            <div class="streetF inputContainer">
-                <span>Where are you looking</span>
-                <input type="text" placeholder="Zoek een stad" id="streetSearch">
-                <img src="Resources/Icons/search-grey.png">
+    <section class="exclusiveProperties">
+        <img src="Resources/Icons/plusshapes.webp" class="plusshape">
+        <h2 data-aos="zoom-out-down">Exclusive Properties_</h2>
+        <div class="propertiesContainer" id="autoSlider">
+            <div class="property empty" data-aos="zoom-in-right">
+               
             </div>
-            <div class="streetF resultContainer">
-                <span>We found</span>
-                <p id="listCount"></p>
-                <img src="Resources/Icons/houses.png">
+            <div class="property" data-aos="zoom-in-right">
+                <img src="Resources/Images/07052019-mieke-van-herck-van-den-brande-hernthout-annick-vernimmen-178-website-1500x1000-q100.jpg">
+                <div class="propFoot">
+                    <div class="propIntro">
+                        <p>Rue Albert, Renaix 9600</p>
+                        <p>345.000</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bed.webp">
+                        <p>4</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/house.webp">
+                        <p>140mÂ²</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bath.webp">
+                        <p>2</p>
+                    </div>
+                </div>
             </div>
-            <div class="wrapContainer">
-                <div class="dropdown type">
-                    <img src="resources/icons/house-dark.png" class="icon">
-                    <span id="typespan">Type</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content hoverA">
-                      <p onclick="addFilter('type', 'Huis', this)" >
-                        <img src="resources/Icons/house-white.png" class="itemIcon">
-                        Huis</p>
-                         <p onclick="addFilter('type', 'Appartement',this)">
-                            <img src="resources/Icons/appartment.png" class="itemIcon">
-                        Appartement</p>
-                        <p onclick="addFilter('type', 'Winkelpad',this)">
-                            <img src="resources/Icons/shop.png" class="itemIcon">
-                        Winkelpad</p>
-                        <p onclick="addFilter('type', 'Grond',this)">
-                            <img src="resources/Icons/land.png" class="itemIcon">
-                            Grond
-                        </p>
-                        <p onclick="addFilter('type', 'Kantoor',this)">
-                            <img src="resources/Icons/office.png" class="itemIcon">
-                            Kantoor
-                        </p>
-                        <p onclick="addFilter('type', 'Garage',this)">
-                            <img src="resources/Icons/garage.png" class="itemIcon">
-                            Garage
-                        </p>
-                        <p onclick="addFilter('type', 'Industrieel',this)">
-                            <img src="resources/Icons/factory.png" class="itemIcon">
-                            Industrieel
-                        </p>
+            <div class="property" data-aos="zoom-in-left">
+                <img src="Resources/Images/20170912_mvh-herentals_0185-1500x1000-q100.jpg">
+                <div class="propFoot">
+                    <div class="propIntro">
+                        <p>Rue Jean Charles, Renaix 9600</p>
+                        <p>435.000</p>
                     </div>
-                  </div>
-                  <div class="dropdown options">
-                    <img src="resources/icons/filter.png" class="icon">
-                    <span>Opties</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content hoverA">
-                      <p>
-                        <img src="resources/Icons/tuin.png" class="itemIcon">
-                        Tuin
-                    </p>
-                      <p>
-                        <img src="resources/Icons/parking.png" class="itemIcon">
-                        Parking
-                    </p>
-                      <p>
-                        <img src="resources/Icons/garage.png" class="itemIcon">
-                        Garage</p>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bed.webp">
+                        <p>5</p>
                     </div>
-                  </div>
-                  <div class="dropdown bedrooms">
-                    <img src="resources/icons/bedroom-grey.png" class="icon">
-                    <span id="bedroomsspan">Slaapkamers</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content hoverA" id="bedroomsD">
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/house.webp">
+                        <p>170mÂ²</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bath.webp">
+                        <p>4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="property" data-aos="zoom-in-right">
+                <img src="Resources/Images/07052019-mieke-van-herck-van-den-brande-hernthout-annick-vernimmen-178-website-1500x1000-q100.jpg">
+                <div class="propFoot">
+                    <div class="propIntro">
+                        <p>Rue Albert, Renaix 9600</p>
+                        <p>345.000</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bed.webp">
+                        <p>4</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/house.webp">
+                        <p>140mÂ²</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bath.webp">
+                        <p>2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="property" data-aos="zoom-in-left">
+                <img src="Resources/Images/20170912_mvh-herentals_0185-1500x1000-q100.jpg">
+                <div class="propFoot">
+                    <div class="propIntro">
+                        <p>Rue Jean Charles, Renaix 9600</p>
+                        <p>435.000</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bed.webp">
+                        <p>5</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/house.webp">
+                        <p>170mÂ²</p>
+                    </div>
+                    <div class="propAttribute">
+                        <img src="Resources/Icons/bath.webp">
+                        <p>4</p>
+                    </div>
+                </div>
+            </div>
+         
+            <img class="footVector" src="Resources/Icons/ropundshapes.webp">
+        </div>
+        <div class="propertiesSC">
+        
+        </div>
+    </section>
+
+
+    <section class="typeOfProperty">
+        <img class="imageBg lazyImage" data-src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.webp">
+        <div class="pageHead">
+            <h1 data-aos="fade-down">Waar bent u naar op zoek?</h1>
+        </div>
+        <div class="cardContainer lazyImage" >
+    
+            
+    
+            <div class="card" id="1">
+                <h3>Kantoor</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/office.jpg">
                 
-                    </div>
-                  </div>
-                  <div class="dropdown price rangeDrop">
-                    <img src="resources/icons/euro.png" class="icon">
-                    <span id="pricespan">Price</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content">
-                        <span id="pricerangespan">Max</span>
-                        <input type="range" min="0" id="pricerange" oninput="inputRangeFilterChanged(this.value,'price')"/>
-                        <span>0 €</span>
-                    </div>
-                  </div>
-                  <div class="dropdown bewopp rangeDrop">
-                    <img src="resources/icons/surface.png" class="icon">
-                    <span id="livSurfaceSpan">Bewoonbare opp (m²)</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content">
-                        <span id="livSurfaceRangeSpan">Max</span>
-                        <input type="range" min="0" id="livSurfaceRange" oninput="inputRangeFilterChanged(this.value,'livSurface')"/>
-                        <span>0</span>
-                    </div>
-                  </div>
-                  <div class="dropdown grondopp rangeDrop">
-                    <img src="resources/icons/surface.png" class="icon">
-                    <span id="totSurfaceSpan">Grond opp (m²)</span>
-                    <img src="resources/icons/expand-bot.png" class="expand">
-                    <div class="dropdown-content">
-                        <span id="totSurfaceRangeSpan">Max</span>
-                        <input type="range" min="0" value="max"id="totSurfaceRange" oninput="inputRangeFilterChanged(this.value,'totSurface')"/>
-                        <span>0 </span>
-                    </div>
-                  </div>
             </div>
-   
+            
+            <div class="card appartement" id="2">
+                <h3>Appartement</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/appart.jpg">
+                
+               
+            </div>
 
-       </div>
-       <div class="body">
-           <div class="map">
-            <div id='map'></div>
-            <a href="#end">
-                <img src="resources/Icons/exit-map.png" class="exitmap">
-            </a>
-            <a href="#realEstateMap">
-                <img src="resources/Icons/exit-map2.png" class="exitmap exittop">
-            </a>
-           </div>
-           <div class="listContainer">
-                <div class="top">
-                    <div class="sort">
-                        <span>Sort By:</span>
-                        <div class="sorter" onclick="changeSort()">
-                            <span>Price</span>
-                            <img id="sortImg" src="Resources/Icons/arrow-up.png">
-                        </div>
-                    </div>
-                </div>
-                <div class="cards-list" id="padsContainer">
-                    <div id="empty-list">
-                        <img src="/Resources/Images/Audit-amico.png">
-                        <h2>Sorry geen padden beschikbaar op deze locatie</h2>
-                        <h3>Probeer een andere</h3>
-                    </div>
-                </div>
+            <div class="card huis" id="3">
+                <h3>Huis</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/home.jpg">
+                               
+            </div>
+    
+            <div class="card nieuwbouw" id="4">
+                <h3>Nieuwbouw</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/nieuwbouw.jpg">
+                
+              
+            </div>
 
-           </div>
-       </div>
-   </section>
+            <div class="card grond" id="5">
+                <h3>Grond</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/grond.jpg">
+                
+              
+            </div>
 
-    <section class="endOfPage" id="end">
+            
+            <div class="card nieuwbouw" id="6">
+                <h3>Commercieel</h3>
+                <img class="cardImg lazyImage" src="Resources/Images/shop.jpg">
+                
+              
+            </div>
+    
+        </div>
+    </section>
+
+
+    <section class="whatwedo">
+        <img class="imageBg" src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.webp">
+        <div class="fadingImageContainer" data-aos="zoom-in-up">
+            <img  src="Resources/Images/realtor-passing-key-buyer.webp">
+            <img src="Resources/Images/scenery-green-golf-meadow-with-sunbeam-morning.jpg">
+        </div>
+        <div class="textContainer" data-aos="fade-down">
+            <div class="verticalLine"></div>
+            <h2>
+                Making your vision come true, That is what we do.
+            </h2>
+            <p>
+                Geboren en getogen in de streek en met reeds enkele jaren ervaring op de lokale vastgoedmarkt,
+                 staan Timi De Smet, Dries Glibert en Xander Marzouki U graag bij in het proces van verkoop of verhuur van uw eigendom,
+                 in uw zoektocht naar een nieuwe woonst of met vrijblijvend advies en een antwoord op al uw onroerende vragen.
+            </p>
+            <a>Meer over ons_</a>
+        </div>
+    </section>
+
+    
+    
+
+    <section class="endOfPage">
         <div class="successStory">
             <div class="story">
-                <img src="Resources/Icons/orange-house.png">
+                <img src="Resources/Icons/orange-house.webp">
                 <p class="numberBig">379</p>
                 <p>Paden te koop of te huur</p>
             </div>
 
             <div class="story">
-                <img src="Resources/Icons/orange-sale.png">
+                <img src="Resources/Icons/orange-sale.webp">
                 <p class="numberBig">548</p>
                 <p>Paden Verkocht</p>
             </div>
 
             <div class="story">
-                <img src="Resources/Icons/orange-star.png">
+                <img src="Resources/Icons/orange-star.webp">
                 <p class="numberBig">9,4 / 10</p>
                 <p>Klanten tevredenheid</p>
             </div>
         </div>
         <form class="mainForm">
-            <img src="Resources/Images/bg-villa.jpg" class="bg-cover">
+            <img src="Resources/Images/bg-villa.webp" class="bg-cover">
             <div class="info">
                 <div class="whiteLine"></div>
                 <h2>Afspraak maken</h2>
                 <p>Had u graag meer informatie gekregen tijdens een persoonlijk gesprek? 
-                    Contacteer ons gerust via onderstaand formulier. Eén van onze makelaars neemt
+                    Contacteer ons gerust via onderstaand formulier. EÃ©n van onze makelaars neemt
                      dan zo snel mogelijk telefonisch of per mail contact met u op om een afspraak vast te leggen.
                 </p>
             </div>
@@ -270,7 +339,7 @@
                 <p>
                     DMG Vastgoed Bv is onderworpen aan de deontologische code van het BIV.
                     <br>
-                     Erkend vastgoedmakelaar en bemiddelaar met BIV nr. 510549. Land van toekenning is België. 
+                     Erkend vastgoedmakelaar en bemiddelaar met BIV nr. 510549. Land van toekenning is BelgiÃ«. 
                      <br><br>Adres BIV: Luxemburgstraat, 16B, 1000 BRUSSEL. BA en borgstelling via NV AXA Belgium (polisnummer 730.390.160)
                 </p>
             </div>
@@ -287,20 +356,20 @@
             <div class="flexCol gegevens">
                 <h3>Gegevens</h3>
                 <p>
-                    <img src="Resources/Icons/location-orange.png">
+                    <img src="Resources/Icons/location-orange.webp">
                     Stationsstraat 30, <br><br>
                     9600 Ronse
                 </p>
                 <p>
-                    <img src="Resources/Icons/phone-orange.png">
+                    <img src="Resources/Icons/phone-orange.webp">
                     055 21 12 10
                 </p>
                 <p>
-                    <img src="Resources/Icons/emial-ornage.png">
+                    <img src="Resources/Icons/emial-ornage.webp">
                     info@dmgvastgoed.be
                 </p>
                 <p>
-                    <img src="Resources/Icons/tag-orange.png">
+                    <img src="Resources/Icons/tag-orange.webp">
                     BE 0715.734.393
                 </p>
             </div>
@@ -343,109 +412,16 @@
         <div class="flexRow footfoot">
             <div class="socialmedia">
                 <img src="Resources/Icons/insta.png">
-                <img src="Resources/Icons/ln copie.png">
+                <img src="Resources/Icons/ln.png">
             </div>
         </div>
     </footer>
+    <script src="Resources/js/typeselector.js"></script>
     <script src="scripts/animations.js"></script>
-    <script src="scripts/estateViewApp.js"></script>
-    <script src="scripts/lazy_images.js"></script>
     <script src="scripts/mainEventHandlers.js"></script>
-    <script src="scripts/functions.js"></script>
+    <script src="scripts/lazy_images.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    </script>
     <script>
-      // initJumpingElements();
-       initMap();
-       let list = [
-           {
-               adress: "Scheldekouter 277",
-               price: 230000,
-               type: "Huis",
-               bedrooms: 4,
-               bathrooms: 2,
-               livSurface: 129,
-               totSurface: 209,
-               city: "9600 Ronse",
-               img: "https://www.villasud.be/static/temp/9/4a378c24337d695b5f31abb3ae10137629c7397b.jpg",
-               localisation: [3.604280, 50.749311],
-               purposes: [
-                   {
-                       purposeId: 1
-                   }
-               ]
-           },
-           {
-               adress: "Stadspark 11",
-               price: 330000,
-               type: "Grond",
-               bedrooms: 2,
-               bathrooms: 1,
-               livSurface: 99,
-               totSurface: 109,
-               city: "9000 Gent",
-               img: "https://static.immoweb.be/photos/0/8/9/9/6/3/1/1/8996311_1.jpg?cache=20210528104345",
-               localisation: [3.7290914000000157, 51.06783069999999],
-               purposes: [
-                   {
-                       purposeId: 3
-                   }
-               ]      
-            },
-            {
-               adress: "Stadspark 5",
-               price: 530000,
-               type: "Garage",
-               bedrooms: 5,
-               bathrooms: 3,
-               livSurface: 119,
-               totSurface: 149,
-               city: "1000 Bruxelles",
-               img: "https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg",
-               localisation: [ 4.351549900000009, 50.8427501],
-               purposes: [
-                   {
-                       purposeId: 5
-                   }
-               ]      
-            },
-            {
-               adress: "Stadspark 2",
-               price: 530000,
-               type: "Garage",
-               bedrooms: 5,
-               bathrooms: 3,
-               livSurface: 119,
-               totSurface: 149,
-               city: "1000 Bruxelles",
-               img: "https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg",
-               localisation: [ 4.351549900000009, 50.8227501],
-               purposes: [
-                   {
-                       purposeId: 1
-                   }
-               ]      
-            },
-            {
-               adress: "Stadspark 4",
-               price: 530000,
-               type: "Garage",
-               bedrooms: 5,
-               bathrooms: 3,
-               livSurface: 119,
-               totSurface: 149,
-               city: "1000 Bruxelles",
-               img: "https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg",
-               localisation: [ 4.351549900000009, 50.7427501],
-               purposes: [
-                   {
-                       purposeId: 3
-                   }
-               ]      
-            }
-       ];
-       setEVAList(list);
     </script>
-    
 </body>
 </html>
