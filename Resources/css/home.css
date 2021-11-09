@@ -207,7 +207,8 @@ header nav {
 .flexRow2 {
     display: none;
     flex-direction: row;
-    position: relative;
+    position: fixed;
+    right: 5px;
     width: auto;
     height: 50px;
 }
@@ -326,6 +327,7 @@ header nav {
             border-right: 1px solid rgba(255, 255, 255, 0.22è);
             padding-right: 25px;
                 padding-left: 10px;
+                background: rgb(0 0 0 / 30%);
           }
           
           .searchbar .sort img {
@@ -350,10 +352,7 @@ header nav {
               line-height: 2.4em;
           }
           .sort:hover .hoverA, .sort:hover{
-            background: rgb(0 0 0 / 30%);
-            border:1px solid rgba(255, 255, 255, 15%);
-            border-top: none;
-            color: white;
+           
             transition-duration: 0.5s;
           }
 .SellOrBuy {
@@ -368,6 +367,7 @@ header nav {
     width: 60%;
     justify-content: left;
     border: none;
+    background: rgb(0 0 0 / 30%);
 }
 .searchbar .Location input {
     width: 100%;
@@ -394,6 +394,7 @@ header nav {
     border-right: none;
     background: #da8852;
     padding-right: 30px;
+    min-width: 85px;
 }
 .searchbar .buttonSearch img {
     margin-left: 20px;
@@ -459,6 +460,10 @@ ___________Choose type of property
     height: fit-content;
     position: relative;
     background: rgb(255, 255, 255);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 
@@ -470,7 +475,7 @@ ___________Choose type of property
     }
 
         .typeOfProperty .pageHead h1 {
-            padding: 5vh 0 4vh 0;
+            padding: 5vh 0 0vh 0;
             font-size: 2em;
             width: 100%;
             text-align: center;
@@ -482,26 +487,30 @@ ___________Choose type of property
 
 .cardContainer {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: column;
+    width: 90%;
     margin: auto;
     color: white;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: 90vh;
+    align-items: center;
 }
 
 .card {
-    width: 15%;
+    width: 400px;
     z-index: 2;
     border-radius: 0px;
     height: 43vh;
     display: flex;
-    flex: 1 0 33%;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     background-color: black;
     transition-duration: 0.5s;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: #00000029 3px 3px 11px 0px;
 }
 
     .card img {
@@ -525,14 +534,12 @@ ___________Choose type of property
     }
 
 
-
-
-
-
-    .card:hover img {
-        opacity: 0.9;
+    .card:hover{
         cursor: pointer;
     }
+
+
+
 
 
 
@@ -739,6 +746,9 @@ ___________Section what we do
         font-weight: 400;
         margin-left: 5%;
         font-size: 1.2em;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
     }
 
     .propIntro p:nth-child(2) {
@@ -950,6 +960,8 @@ button:hover {
 footer {
     background: rgba(0, 0, 0, 0.884);
     color: white;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .flexRow {
@@ -1168,7 +1180,36 @@ a {
         padding-top: 10%;
     }
 }
-
+@media (max-width: 1600px) {
+    .landingpage h1{
+        font-size: 2.5em;
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+    .bigImg{
+        margin-top: 20px;
+        flex-direction: column-reverse;
+    }
+    .searchbar{
+        font-size: .9em;
+    }
+    .homeCards{
+        margin-top: 20px;
+        width: 45%;
+    }
+}
+@media (max-width: 1300px) {
+    .typeOfProperty{
+        flex-wrap: wrap;
+        
+    }
+    .typeOfProperty .cardContainer{
+        height: 150vh;
+    }
+    .typeOfProperty .card{
+        width: 40% ;
+    }
+}
 @media (max-width: 1200px) {
     .endOfPage {
         height: 100vh;
@@ -1191,15 +1232,56 @@ a {
         width: 200px;
         margin-bottom: 20px;
     }
+    .homeCards{
+        width: 55%;
+    }
+  
 }
-
-@media (max-width: 880px) {
+@media (max-width: 1050px) {
     header nav {
         display: none;
     }
 
     header .flexRow2 {
         display: flex;
+    }
+    .bigImg{
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .searchbar{
+        width: 90%;
+    }
+    .homeCards{
+        width: 85%;
+    }
+    .landingpage h1{
+        width: 95%;
+    }
+    .property{
+        min-width: 50%;
+    }
+}
+@media (max-width: 880px) {
+
+    .landingpage h1{
+        margin-bottom: 20px;
+    }
+    .property{
+        min-width: 60%;
+    }
+    .whatwedo{
+        flex-direction: column;
+    }
+    .whatwedo .textContainer{
+        width: 80%;
+    }
+    .fadingImageContainer{
+        width: 60%;
+    }
+    .typeOfProperty .card{
+        width: 49%;
     }
 }
 
@@ -1267,4 +1349,90 @@ a {
         .endOfPage .successStory {
             flex-direction: column;
         }
+        .landingpage h1{
+            margin-bottom: 50%;
+            margin-top: 50px;
+        }
+
+        .searchbar{
+            flex-wrap: wrap;
+        }
+        .searchbar .sort{
+            width: 43%;
+        }
+        .searchbar .Location{
+            width: 60%;
+        }
+        .property{
+            min-width: 70%;
+            font-size: .9em;
+        }
+        .empty{
+            display: none;
+        }
+        .typeOfProperty .cardContainer{
+            height: auto;
+        }
+        .typeOfProperty .card{
+            width: 90%;
+            max-width: 450px;
+        }
+}
+@media (max-width: 550px) {
+    .searchbar .sort{
+        width: 42%;
+    }
+    .searchbar{
+        background: transparent;
+    }
+    .landingpage h1{
+        font-size: 2em;
+        margin-top: 100px;
+    }
+    .searchbar .Location{
+        width: 90%;
+    }
+    .property{
+        min-width: 80%;
+        font-size: .8em;
+    }
+}
+@media (max-width: 500px) {
+    .searchbar .sort{
+        width: 39%;
+    }
+    .searchbar .Location{
+        width: 85%;
+    }
+    .landingpage h1{
+        margin-bottom: 60%;
+    }
+    .searchbar .sort{
+        font-size: .9em;
+    }
+    .property{
+        min-width: 90%;
+        font-size: .8em;
+    }
+}
+@media (max-width: 400px) {
+   
+    .searchbar .Location{
+        width: 84%;
+    }
+    .landingpage h1{
+        margin-bottom: 75%;
+        margin-top: 130px;
+    }
+    .searchbar .sort{
+        width: 38%;
+    }
+    .property{
+        min-width: 95%;
+        font-size: .8em;
+    }
+    .typeOfProperty .card{
+        width: 100%;
+        max-width: 450px;
+    }
 }

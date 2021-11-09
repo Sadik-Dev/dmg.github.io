@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="Resources/css/dropdown.css">
@@ -11,6 +12,29 @@
 </head>
 
 <body>
+    <div class="menuWrapper" id="menu">
+        <div class="menu" >
+            <div class="header">
+                <img src="Resources/Logo/Wit-DMG2.png" class="logoIcon">
+                <img src="Resources/Icons/close.png" class="close" id="closeMenu">
+            </div>
+            <div class="body">
+                    <a class="current">Home</a>
+                    <a>Kopen</a>
+                    <a>Huren</a>
+                    <a>Nieuwbouw</a>
+                    <a>Verkopen</a>
+                    <a>Verhuren</a>
+            </div>
+            <div class="footer">
+                <a>Over ons</a>
+                <a>Contact</a>
+            </div>
+        </div>
+        <div class="hidder">
+
+        </div>
+    </div>
     <section class="landingpage">
         <header>
             <a class="logo"><img class="logo" src="Resources/Logo/logo.png" alt="DMGVastgoed" title="DMGVastgoed"></a>
@@ -64,7 +88,7 @@
             <div class="bigImg">
             <h1>The shortest distance between <br> paradise and the place you <br> call home</h1>    
             <div class="searchbar" data-aos="fade-right" data-aos-delay="500">
-                <div class="dropdown dropdownValued sort">
+                <div class="dropdown dropdownValued sort" data-type="sort">
                     <span class="selectedValue"></span>
                     <img src="Resources/Icons/expand-bot.png">
                     <div class="dropdown-content hoverA">
@@ -72,7 +96,7 @@
                         <span>Huren</span>
                     </div>
                   </div>
-                  <div class="dropdown dropdownValued sort Type">
+                  <div class="dropdown dropdownValued sort Type" data-type="sort">
                     <span class="selectedValue"></span>
                     <img src="Resources/Icons/expand-bot.png">
                     <div class="dropdown-content hoverA">
@@ -136,7 +160,7 @@
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/house.webp">
-                        <p>140mÂ²</p>
+                        <p>140m²</p>
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/bath.webp">
@@ -157,7 +181,7 @@
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/house.webp">
-                        <p>170mÂ²</p>
+                        <p>170m²</p>
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/bath.webp">
@@ -178,7 +202,7 @@
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/house.webp">
-                        <p>140mÂ²</p>
+                        <p>140m²</p>
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/bath.webp">
@@ -190,7 +214,7 @@
                 <img src="Resources/Images/20170912_mvh-herentals_0185-1500x1000-q100.jpg">
                 <div class="propFoot">
                     <div class="propIntro">
-                        <p>Rue Jean Charles, Renaix 9600</p>
+                        <p>Rue Jean Charles ezjkbgkjezbgegoezg, Renaix 9600</p>
                         <p>435.000</p>
                     </div>
                     <div class="propAttribute">
@@ -199,7 +223,7 @@
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/house.webp">
-                        <p>170mÂ²</p>
+                        <p>170m²</p>
                     </div>
                     <div class="propAttribute">
                         <img src="Resources/Icons/bath.webp">
@@ -214,7 +238,24 @@
         
         </div>
     </section>
-
+    <section class="whatwedo">
+        <div class="fadingImageContainer" data-aos="zoom-in-up">
+            <img  src="Resources/Images/realtor-passing-key-buyer.jpg">
+            <img src="Resources/Images/scenery-green-golf-meadow-with-sunbeam-morning.jpg">
+        </div>
+        <div class="textContainer" data-aos="fade-down">
+            <div class="verticalLine"></div>
+            <h2>
+                Making your vision come true, That is what we do.
+            </h2>
+            <p>
+                Geboren en getogen in de streek en met reeds enkele jaren ervaring op de lokale vastgoedmarkt,
+                 staan Timi De Smet, Dries Glibert en Xander Marzouki U graag bij in het proces van verkoop of verhuur van uw eigendom,
+                 in uw zoektocht naar een nieuwe woonst of met vrijblijvend advies en een antwoord op al uw onroerende vragen.
+            </p>
+            <a>Meer over ons_</a>
+        </div>
+    </section>
 
     <section class="typeOfProperty">
         <img class="imageBg lazyImage" data-src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.webp">
@@ -222,9 +263,6 @@
             <h1 data-aos="fade-down">Waar bent u naar op zoek?</h1>
         </div>
         <div class="cardContainer lazyImage" >
-    
-            
-    
             <div class="card" id="1">
                 <h3>Kantoor</h3>
                 <img class="cardImg lazyImage" src="Resources/Images/office.jpg">
@@ -237,20 +275,18 @@
                 
                
             </div>
-
             <div class="card huis" id="3">
                 <h3>Huis</h3>
                 <img class="cardImg lazyImage" src="Resources/Images/home.jpg">
                                
             </div>
-    
+            
             <div class="card nieuwbouw" id="4">
                 <h3>Nieuwbouw</h3>
                 <img class="cardImg lazyImage" src="Resources/Images/nieuwbouw.jpg">
                 
               
             </div>
-
             <div class="card grond" id="5">
                 <h3>Grond</h3>
                 <img class="cardImg lazyImage" src="Resources/Images/grond.jpg">
@@ -268,30 +304,6 @@
     
         </div>
     </section>
-
-
-    <section class="whatwedo">
-        <img class="imageBg" src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.webp">
-        <div class="fadingImageContainer" data-aos="zoom-in-up">
-            <img  src="Resources/Images/realtor-passing-key-buyer.webp">
-            <img src="Resources/Images/scenery-green-golf-meadow-with-sunbeam-morning.jpg">
-        </div>
-        <div class="textContainer" data-aos="fade-down">
-            <div class="verticalLine"></div>
-            <h2>
-                Making your vision come true, That is what we do.
-            </h2>
-            <p>
-                Geboren en getogen in de streek en met reeds enkele jaren ervaring op de lokale vastgoedmarkt,
-                 staan Timi De Smet, Dries Glibert en Xander Marzouki U graag bij in het proces van verkoop of verhuur van uw eigendom,
-                 in uw zoektocht naar een nieuwe woonst of met vrijblijvend advies en een antwoord op al uw onroerende vragen.
-            </p>
-            <a>Meer over ons_</a>
-        </div>
-    </section>
-
-    
-    
 
     <section class="endOfPage">
         <div class="successStory">
@@ -314,7 +326,7 @@
             </div>
         </div>
         <form class="mainForm">
-            <img src="Resources/Images/bg-villa.webp" class="bg-cover">
+            <img src="Resources/Images/bg-villa.jpg" class="bg-cover">
             <div class="info">
                 <div class="whiteLine"></div>
                 <h2>Afspraak maken</h2>
@@ -418,6 +430,7 @@
     </footer>
     <script src="Resources/js/typeselector.js"></script>
     <script src="scripts/animations.js"></script>
+    <script src="scripts/functions.js"></script>
     <script src="scripts/mainEventHandlers.js"></script>
     <script src="scripts/lazy_images.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

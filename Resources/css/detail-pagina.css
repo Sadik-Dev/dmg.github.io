@@ -91,43 +91,38 @@
 }
 .detailPagina .content .mainTable {
   width: 90%;
-  margin: 20px auto 0 auto;
+  margin: 0px auto 0 auto;
   border: 1px solid #0000000a;
   background: #F8F9FD;
   padding: 10px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .detailPagina .content .mainTable tbody {
   width: 100%;
-}
-.detailPagina .content .mainTable tr {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  align-items: center;
-  margin: 20px auto 20px auto;
-  width: 90%;
 }
-.detailPagina .content .mainTable tr td {
+.detailPagina .content .mainTable tbody tr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 10px auto;
   width: 25%;
 }
-.detailPagina .content .mainTable tr td:nth-child(2) {
-  width: 30%;
-  margin-right: 5%;
-}
-.detailPagina .content .mainTable tr td:nth-child(3) {
-  width: 35%;
-}
-.detailPagina .content .mainTable tr td:nth-child(4) {
-  width: 15%;
-}
-.detailPagina .content .mainTable tr:nth-child(odd) td {
+.detailPagina .content .mainTable tbody tr td:nth-child(1) {
   color: #E79D6C;
   font-weight: 500;
   font-size: 0.9em;
+  margin-bottom: 7px;
 }
-.detailPagina .content .mainTable tr:nth-child(even) td {
+.detailPagina .content .mainTable tbody tr td:nth-child(2) {
   color: #1E1E1E;
   font-weight: 700;
   font-size: 1.3em;
+  margin-bottom: 30px;
 }
 .detailPagina .content .infoTable {
   width: 90%;
@@ -156,6 +151,7 @@
   color: #E79D6C;
   font-weight: 500;
   font-size: 0.9em;
+  margin-bottom: 7px;
 }
 .detailPagina .content .infoTable tbody tr td:nth-child(2) {
   color: #1E1E1E;
@@ -231,6 +227,14 @@
 
   .carrousel {
     bottom: 20%;
+  }
+
+  .detailPagina .content .infoTable tbody tr {
+    width: 35%;
+  }
+
+  .detailPagina .content .mainTable tbody tr {
+    width: 35%;
   }
 }
 @media (max-width: 450px) {

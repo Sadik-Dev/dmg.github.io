@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", init())
 
 function init(){
-    ChooseTypeSectionHandler();
+    //ChooseTypeSectionHandler();
     console.log("ik ben klaar");
 }
 
