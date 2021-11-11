@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link rel="stylesheet" href="Resources/css/reset.css">
+    <link rel="stylesheet" href="Resources/css/dropdown.css">
+    <link rel="stylesheet" href="Resources/css/home.css">
+    <link rel="stylesheet" href="Resources/css/lazy_gallery.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Resources/css/detail-pagina.css">
+    <link rel="stylesheet" href="Resources/css/verkopen.css">
+</head>
+
+<body>
+    <div class="menuWrapper" id="menu">
+        <div class="menu" >
+            <div class="header">
+                <img src="Resources/Logo/Wit-DMG2.png" class="logoIcon">
+                <img src="Resources/Icons/close.png" class="close" id="closeMenu">
+            </div>
+            <div class="body">
+                    <a class="current">Home</a>
+                    <a>Kopen</a>
+                    <a>Huren</a>
+                    <a>Nieuwbouw</a>
+                    <a>Verkopen</a>
+                    <a>Verhuren</a>
+            </div>
+            <div class="footer">
+                <a>Over ons</a>
+                <a>Contact</a>
+            </div>
+        </div>
+        <div class="hidder">
+
+        </div>
+    </div>
+    <section class="landingpage head">
+        <header>
+            <a class="logo"><img class="logo" src="Resources/Logo/logo.png" alt="DMGVastgoed" title="DMGVastgoed"></a>
+            <nav >
+                <a href="#">
+                    <img src="resources/Icons/start-icon.png">
+                    <span>Home</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/home-disattached.png">
+                    <span>Kopen</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/houses-black.png" >
+                    <span>Nieuwbouw</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rent.png">
+                    <span>Huren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rental.png">
+                    <span>Verhuren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/sell-estate.png">
+                    <span>Verkopen</span>
+                </a>
+                <a href="#" class="contactBT">Contact</a>
+                <div class="dropdown lang">
+                    <img src="resources/icons/languages.png" class="">
+                    <div class="dropdown-content hoverB">
+                    <span>FR</span>
+                    <span>NL</span> 
+                    </div>
+                  </div>
+            </nav>
+            <div class="flexRow2">
+                <div class="dropdown lang">
+                    <img src="resources/icons/languages.png" class="">
+                    <div class="dropdown-content hoverB">
+                    <span>FR</span>
+                    <span>NL</span> 
+                    </div>
+                  </div>
+                  <div class="menuB">
+                    <img src="resources/icons/menu-orange.png">
+                </div>
+            </div>
+        
+        </header>
+        <img src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.jpg" class="bigImg" alt="DMGVASTGOED">
+    </section>
+    <section class="artPage">
+        <div class="intro">
+            <div class="article">
+                <div class="imgContainer">
+                    <img src="Resources/Images/close-up-asian-business-man-holding-model-house-business-finance-concept.jpg">
+                </div>
+                <div class="text">
+                    <span>Wenst u jouw eigendom te verkopen ?</span>
+                    <h2>Wij helpen u daarmee</h2>
+                    <p>
+                        Uw eigendom op een vlotte, transparante wijze en aan een correcte prijs verkopen?
+                         Het kan aan de hand van onze zorgvuldige en professionnele manier van werken.
+                    </p>
+                    <p>
+                       Met ons houd je controle over de verkoop: je weet precies welke stappen er zijn genomen of niet,
+                        wie de kandidaten zijn, wat de koopaanbiedingen zijn... en je word niet geblokkeerd door 
+                        een contract met een agentschap.
+                    </p>
+                </div>
+            </div>
+            <div class="stepsOverview">
+                <div class="step">
+                    <span>1</span>
+                    <p>
+                        Waardebepaling van uw eigendom
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span>2</span>
+                    <p>
+                        Samenstelling verkoopdossier
+                    </p>
+                </div>
+
+                <div class="step">
+                    <span>3</span>
+                    <p>
+                        Publiciteit en marketingtools
+                    </p>
+                </div>
+                <div class="step">
+                    <span>4</span>
+                    <p>
+                        Begeleide bezichtigingen ter plaatse
+                    </p>
+                </div>
+                <div class="step">
+                    <span>5</span>
+                    <p>
+                        Opvolging leads
+                    </p>
+                </div>
+                <div class="step">
+                    <span>6</span>
+                    <p>
+                        Onderhandelen met kandidaten
+                    </p>
+                </div>
+                <div class="step">
+                    <span>7</span>
+                    <p>
+                        Opmaak en ondertekening compromis
+                    </p>
+                </div>
+                <div class="step">
+                    <span>8</span>
+                    <p>
+                        Communicatie en opvolging na verkoop
+                    </p>
+                </div>
+                <div class="step">
+                    <span>9</span>
+                    <p>
+                        Verlijden van akte en overdracht eigendom
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="articleItems" >
+            <div class="article" id="step1">
+                <div class="imgContainer">
+                    <img src="Resources/Images/waardebepaling.jpg">
+                </div>
+                <div class="text">
+                    <span>stap 1</span>
+                    <h2>
+                        Waardebepaling van uw eigendom
+                    </h2>
+                    <p>
+                        Vooreerst zorgen we voor een objectieve schatting van de verkoopwaarde van uw eigendom. Onze bevindingen ter plaatse, opmetingen en bijkomende inlichtingen vormen de basis voor deze waardebepaling. De verdere uiteenzetting van de berekening voltrekt zich bij ons op kantoor, waarbij we o.a. de kadastrale gegevens, ligging en vastgoedinformatie omtrent uw eigendom mee in acht nemen.
+                    </p>
+                    <p>
+                        Het resultaat wordt afgetoetst aan de actuele vastgoedprijzen en aan reeds recent verkochte eigendommen in de regio. Hierdoor kunnen we U als eigenaar de meest accurate en actuele waardebepaling voorleggen in de vorm van een uitgebreid en overzichtelijk schattingsverslag. In samenspraak met U, als eigenaar, tenslotte wordt eventueel een geschikte vraagprijs vooropgesteld.
+                    </p>
+                </div>
+            </div>
+
+            <div class="article" id="step2">
+                <div class="text">
+                    <span>stap 2</span>
+                    <h2>
+                        Samenstelling verkoopdossier
+                    </h2>
+                    <p>
+                        Zowel bij de verkoop van een eigendom in het Vlaams Gewest als in het Waals Gewest dienen heel wat verplichte attesten en documenten aanwezig te zijn.                    </p>
+                    <p>
+                        Zo dient er bijvoorbeeld een energieprestatiecertificaat (EPC) aanwezig te zijn alvorens een woning te koop mag worden aangeboden. Welke verschillende attesten dienen aangevraagd te worden? Bij welke instanties dient dit te gebeuren? Zijn de huidige documenten van mijn eigendom nog rechtsgeldig? Wij ontlasten u als eigenaar van deze administratieve rompslomp en stellen het volledige verkoopdossier samen.                    </p>
+                </div>
+                <div class="imgContainer">
+                    <img src="Resources/Images/administratieve-voorbereiding.jpg">
+                </div>
+            </div>
+
+            <div class="article" id="step3">
+                <div class="imgContainer">
+                    <img src="Resources/Images/publiciteit-en-marketingtools.jpg">
+                </div>
+                <div class="text">
+                    <span>stap 3</span>
+                    <h2>
+                        Publiciteit en marketingtools
+                    </h2>
+                    <p>
+                        “You have only one chance to make a first impression”. Daarom maken wij gebruik van professionele fotografie om uw eigendom op de best mogelijke manier in beeld te brengen! Deze fotoreportages gebruiken we vervolgens op verscheidene portaalsites, waaronder onze eigen gepersonaliseerde site. Daar niemand nog de kracht van sociale media kan minimaliseren, wordt uw eigendom ten volle gepromoot op o.a. Facebook en Instagram op allerhande manieren.                    </p>
+                    <p>
+                        In onze steeds up-to-date blijvende vitrine wordt uw eigendom aan de hand van smaakvolle, led verlichte kaders tentoongesteld. Aan de hand van onze opvallende publiciteitsborden ten slotte wordt uw eigendom ook ter plaatse in de kijker gezet!                    </p>
+                </div>
+            </div>
+
+            <div class="article" id="step4">
+                <div class="text">
+                    <span>stap 4</span>
+                    <h2>
+                        Begeleide bezichtigingen ter plaatse
+                    </h2>
+                    <p>
+                        Wij gaan met uw eigendom om alsof het de onze is. Elke bezichtiging met kandidaat-kopers wordt steeds geleid door één van onze professionele makelaars die het volledige verkoopdossier bij zich heeft. We nemen uitvoerig de tijd om de kandidaat doorheen de woning te leiden, waarbij wij hem op een correcte en transparante manier informeren.                     </p>
+                    <p>
+                        Zijn er nog bepaalde kosten te voorzien (niet conforme elektrische installatie, te isoleren dak, te vernieuwen raamwerken,...) aan de woning, dan bekeken wij reeds wat de mogelijke kostprijs is zodat de kandidaat-koper zicht heeft op een correct totaalplaatje. Na elke bezichtiging krijgt de kandidaat tenslotte een overzichtsfiche mee van het bezochte pand met onze directe contactgegevens voor een optimale ervaring na bezichtiging.                    </p>
+                </div>
+                <div class="imgContainer">
+                    <img src="Resources/Images/begeleide-bezichtigingen.jpg">
+                </div>
+            </div>
+            <div class="article" id="step5">
+                <div class="imgContainer">
+                    <img src="Resources/Images/opvolging-leads.jpg">
+                </div>
+                <div class="text">
+                    <span>stap 5</span>
+                    <h2>
+                        Opvolging leads
+                    </h2>
+                    <p>
+                        Via ons geautomatiseerd systeem wordt uw eigendom voorgesteld aan ons uitgebreid klantenbestand kandidaat-kopers. Elke bezichtiging of informatieaanvraag geeft bovendien aanleiding tot het opvolgen van desbetreffende lead, op deze manier kunnen we u, als verkoper, correcte feedback geven en desgevallend onze modus operandi op basis hiervan aanpassen.                          </p>
+                    <p>
+                   </p>
+                </div>
+            </div>
+            <div class="article" id="step6">
+                <div class="text">
+                    <span>stap 6</span>
+                    <h2>
+                        Onderhandelen met kandidaten
+                    </h2>
+                    <p>
+                        Wanneer de interesse van één of meerdere kandidaten concreet wordt in de vorm van een bod trachten we, in samenspraak met U, via gerichte onderhandelingen tot het meest gewenste resultaat te komen waar u als verkoper volledig achter staat.                     </p>
+                    <p>
+                         </p>
+                </div>
+                <div class="imgContainer">
+                    <img src="Resources/Images/onderhandelingen.jpg">
+                </div>
+            </div>
+
+            <div class="article" id="step7">
+                <div class="imgContainer">
+                    <img src="Resources/Images/opmaak-en-ondertekening-compromis.jpg">
+                </div>
+                <div class="text">
+                    <span>stap 7</span>
+                    <h2>
+                        Opmaak en ondertekening compromis
+                    </h2>
+                    <p>
+                        Eens bovenstaand bod door u wordt aanvaard, vindt in theorie reeds een verkoop plaats. Uiteraard zorgen wij echter voor de opmaak en ondertekening van de onderhandse verkoopovereenkomst waarin alle verplichte en noodzakelijke verkoopmodaliteiten worden opgenomen.                         </p>
+                    <p>
+                        Doordat wij reeds over het volledig verkoopdossier beschikken kunnen we snel overgaan tot de ondertekening, waardoor beide partijen gerust kunnen zijn.
+                   </p>
+                </div>
+            </div>
+
+            <div class="article" id="step8">
+                <div class="text">
+                    <span>stap 8</span>
+                    <h2>
+                        Communicatie en opvolging na verkoop
+                    </h2>
+                    <p>
+                        Na ondertekening van de verkoopovereenkomst maken wij het verkoopdossier over aan de notaris van uw keuze alsook die van de koper.
+                        Wij waken desgevallend over de eventuele kredietaanvraag van de koper en houden u betrokken bij elke verdere ontwikkeling in uw verkoopdossier.                      </p>
+                    <p>
+                         </p>
+                </div>
+                <div class="imgContainer">
+                    <img src="Resources/Images/communicatie-en-opvolging.jpg">
+                </div>
+            </div>
+
+            <div class="article" id="step9">
+                <div class="imgContainer">
+                    <img src="Resources/Images/verlijden-van-de-akte.jpg">
+                </div>
+                <div class="text">
+                    <span>stap 9</span>
+                    <h2>
+                        Verlijden van akte en overdracht eigendom
+                    </h2>
+                    <p>
+                        Voorafgaand aan het verlijden van de authentieke akte bij de instrumenterende notaris, zorgen wij voor de opname van de meterstanden en het invullen van de overnamedocumenten. Vervolgens begeleiden we U op het notariaat tijdens het verlijden van de akte, administratieve verplichting en overdracht van de sleutels                  </p>
+                    <p>
+                        We brengen het volledige verkoopdossier met ons mee, waarna we deze overmaken aan de nieuwe eigenaars. Op deze manier laat U uw eigendom over met een gerust gevoel.
+
+                         </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="endOfPage" id="end">
+        <div class="successStory">
+            <div class="story">
+                <img src="Resources/Icons/orange-house.png">
+                <p class="numberBig">379</p>
+                <p>Paden te koop of te huur</p>
+            </div>
+
+            <div class="story">
+                <img src="Resources/Icons/orange-sale.png">
+                <p class="numberBig">548</p>
+                <p>Paden Verkocht</p>
+            </div>
+
+            <div class="story">
+                <img src="Resources/Icons/orange-star.png">
+                <p class="numberBig">9,4 / 10</p>
+                <p>Klanten tevredenheid</p>
+            </div>
+        </div>
+        <form class="mainForm">
+            <img src="Resources/Images/bg-villa.jpg" class="bg-cover">
+            <div class="info">
+                <div class="whiteLine"></div>
+                <h2>Afspraak maken</h2>
+                <p>Had u graag meer informatie gekregen tijdens een persoonlijk gesprek? 
+                    Contacteer ons gerust via onderstaand formulier. Eén van onze makelaars neemt
+                     dan zo snel mogelijk telefonisch of per mail contact met u op om een afspraak vast te leggen.
+                </p>
+            </div>
+       
+            <div class="inputs">
+                <input type="text" required="" placeholder="Naam*">
+                <input type="email" required="" placeholder="E-mail*">
+                <input type="phone" required="" placeholder="Telefoon*">
+                <button>Afspraak Vragen</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="flexRow footCont">
+            <div class="flexCol compIntro">
+                <img src="Resources/Logo/Wit-DMG.png">
+                <p>
+                    DMG Vastgoed Bv is onderworpen aan de deontologische code van het BIV.
+                    <br>
+                     Erkend vastgoedmakelaar en bemiddelaar met BIV nr. 510549. Land van toekenning is België. 
+                     <br><br>Adres BIV: Luxemburgstraat, 16B, 1000 BRUSSEL. BA en borgstelling via NV AXA Belgium (polisnummer 730.390.160)
+                </p>
+            </div>
+            <div class="flexCol sitemap">
+                <h3>Sitemap</h3>
+                <a>Kopen</a>
+                <a>Huren</a>
+                <a>Nieuwbouw</a>
+                <a>Verkopen</a>
+                <a>Verhuren</a>
+                <a>Over ons</a>
+                <a>Contact</a>
+            </div>
+            <div class="flexCol gegevens">
+                <h3>Gegevens</h3>
+                <p>
+                    <img src="Resources/Icons/location-orange.png">
+                    Stationsstraat 30, <br><br>
+                    9600 Ronse
+                </p>
+                <p>
+                    <img src="Resources/Icons/phone-orange.png">
+                    055 21 12 10
+                </p>
+                <p>
+                    <img src="Resources/Icons/emial-ornage.png">
+                    info@dmgvastgoed.be
+                </p>
+                <p>
+                    <img src="Resources/Icons/tag-orange.png">
+                    BE 0715.734.393
+                </p>
+            </div>
+            <div class="flexCol gegevens">
+                <h3>Openingsuren</h3>
+                <div class="openingsuur">
+                    <p>M</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="openingsuur">
+                    <p>D</p>
+                    <p>9H00 - 12H30 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>W</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="break">
+
+                </div>
+                <div class="openingsuur">
+                    <p>D</p>
+                    <p>9H00 - 12H30 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>V</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="openingsuur">
+                    <p>Z</p>
+                    <p>10H00 - 13H00 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>Z</p>
+                    <p>Gesloten</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="flexRow footfoot">
+            <div class="socialmedia">
+                <img src="Resources/Icons/insta.png">
+                <img src="Resources/Icons/ln copie.png">
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/mainEventHandlers.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
+    <script src="scripts/lazy_gallery.js"></script>
+    <script>
+        Lazy();
+    </script>
+</body>
+</html>

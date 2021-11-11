@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 .landingpage header .logo {
-  width: 75px;
+  width: 100px;
 }
 .landingpage header nav a {
   color: #1E1E1E;
@@ -159,7 +159,11 @@
   font-size: 1.3em;
   margin-bottom: 30px;
 }
-
+@media (max-width: 1920px){
+  .landingpage header .logo {
+    width: 75px;
+  }
+}
 @media (max-width: 1300px) {
   .sliderFrame {
     height: 500px;

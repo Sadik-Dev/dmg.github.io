@@ -1,0 +1,252 @@
+.artPage {
+  width: 90%;
+  margin: auto;
+}
+
+.artPage .article {
+  width: 50%;
+  overflow: hidden;
+  margin: 5% auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  color: #403D3C;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.3em;
+}
+
+.artPage .article > .imgContainer {
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 79%);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 79%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.artPage .article > .imgContainer img {
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+.artPage .article .text {
+  margin-top: 20px;
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+
+.artPage .article .text span {
+  font-weight: 700;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.artPage .article .text h2 {
+  margin: 30px 0px 10px 0;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.artPage .article .text p {
+  line-height: 1.5em;
+  margin-top: 20px;
+}
+
+.artPage .intro {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.artPage .intro .stepsOverview {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1%;
+  height: 350px;
+}
+
+.artPage .intro .stepsOverview .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  height: 300px;
+  margin-top: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 2px 15px #00000008;
+          box-shadow: 0 2px 15px #00000008;
+  opacity: 1;
+  background: #ffffff;
+  opacity: .3;
+}
+
+.artPage .intro .stepsOverview .step span {
+  font-size: 2.5em;
+  font-weight: 300;
+  margin: 50px auto 20px auto;
+}
+
+.artPage .intro .stepsOverview .step p {
+  margin: 10px auto auto auto;
+  width: 75%;
+  text-align: center;
+  height: auto;
+  line-height: 1.5em;
+  font-size: 1.3em;
+}
+
+.artPage .intro .stepsOverview .step:hover {
+  color: #EAA67A;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-box-shadow: 0 2px 15px #e79d6c26;
+          box-shadow: 0 2px 15px #e79d6c26;
+  margin-bottom: 10px;
+}
+
+.artPage .articleItems {
+  height: auto;
+}
+
+.artPage .articleItems .article {
+  width: 80%;
+  padding: 20px 10px 20px 10px;
+  border-bottom: 1px solid #F4F4F4;
+}
+
+.artPage .articleItems .article .text span {
+  color: #EAA67A;
+  border-bottom: 2px solid #EAA67A;
+}
+
+.artPage .articleItems .article .imgContainer {
+  -webkit-clip-path: none;
+          clip-path: none;
+  overflow: hidden;
+  -webkit-box-shadow: 4px 7px 15px #00000012;
+          box-shadow: 4px 7px 15px #00000012;
+}
+
+@media (max-width: 1920px) {
+  .artPage .intro {
+    position: relative;
+  }
+  .artPage .intro .article {
+    width: 80%;
+  }
+  .artPage .intro .stepsOverview {
+    height: auto;
+    font-size: .9em;
+  }
+  .artPage .intro .stepsOverview .step {
+    height: 230px;
+    width: 175px;
+  }
+  .artPage .intro .stepsOverview .step:hover {
+    margin-bottom: -5px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .artPage .article .imgContainer {
+    width: 200px;
+    height: 400px;
+  }
+  .artPage .intro {
+    height: auto;
+  }
+  .artPage .stepsOverview {
+    height: auto;
+    font-size: .9em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .artPage .article .imgContainer {
+    width: 100px;
+    height: 200px;
+  }
+  .artPage .intro {
+    height: auto;
+  }
+  .artPage .intro .article {
+    width: 100%;
+  }
+  .artPage .intro .article .text {
+    width: 80%;
+  }
+  .artPage .articleItems .article {
+    width: 90%;
+  }
+  .artPage .articleItems .article .text {
+    width: 70%;
+  }
+  .artPage .articleItems div:nth-child(2n) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 650px) {
+  .artPage .article .imgContainer {
+    width: 50px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .artPage .intro .article .text span {
+    line-height: 2.5em;
+  }
+  .artPage .intro .stepsOverview .step {
+    height: 200px;
+    width: 48%;
+  }
+}
+/*# sourceMappingURL=verkopen.css.map */
