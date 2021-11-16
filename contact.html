@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link rel="stylesheet" href="Resources/css/reset.css">
+    <link rel="stylesheet" href="Resources/css/dropdown.css">
+    <link rel="stylesheet" href="Resources/css/home.css">
+    <link rel="stylesheet" href="Resources/css/lazy_gallery.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Resources/css/detail-pagina.css">
+    <link rel="stylesheet" href="Resources/css/contact.css">
+</head>
+
+<body>
+    <div class="menuWrapper" id="menu">
+        <div class="menu" >
+            <div class="header">
+                <img src="Resources/Logo/Wit-DMG2.png" class="logoIcon">
+                <img src="Resources/Icons/close.png" class="close" id="closeMenu">
+            </div>
+            <div class="body">
+                    <a class="current">Home</a>
+                    <a>Kopen</a>
+                    <a>Huren</a>
+                    <a>Nieuwbouw</a>
+                    <a>Verkopen</a>
+                    <a>Verhuren</a>
+            </div>
+            <div class="footer">
+                <a>Over ons</a>
+                <a>Contact</a>
+            </div>
+        </div>
+        <div class="hidder">
+
+        </div>
+    </div>
+    <section class="landingpage head">
+        <header>
+            <a class="logo"><img class="logo" src="Resources/Logo/logo.png" alt="DMGVastgoed" title="DMGVastgoed"></a>
+            <nav >
+                <a href="#">
+                    <img src="resources/Icons/start-icon.png">
+                    <span>Home</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/home-disattached.png">
+                    <span>Kopen</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/houses-black.png" >
+                    <span>Nieuwbouw</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rent.png">
+                    <span>Huren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/rental.png">
+                    <span>Verhuren</span>
+                </a>
+                <a href="#">
+                    <img src="resources/Icons/sell-estate.png">
+                    <span>Verkopen</span>
+                </a>
+                <a href="#" class="contactBT">Contact</a>
+                <div class="dropdown lang">
+                    <img src="resources/icons/languages.png" class="">
+                    <div class="dropdown-content hoverB">
+                    <span>FR</span>
+                    <span>NL</span> 
+                    </div>
+                  </div>
+            </nav>
+            <div class="flexRow2">
+                <div class="dropdown lang">
+                    <img src="resources/icons/languages.png" class="">
+                    <div class="dropdown-content hoverB">
+                    <span>FR</span>
+                    <span>NL</span> 
+                    </div>
+                  </div>
+                  <div class="menuB">
+                    <img src="resources/icons/menu-orange.png">
+                </div>
+            </div>
+        
+        </header>
+        <img src="Resources/Images/3d-rendering-architectural-house-swimming-pool-design.jpg" class="bigImg" alt="DMGVASTGOED">
+    </section>
+    <section class="contactPage">
+        <div class="information">
+            <h2>
+                Neem verder contact met ons op
+            </h2>
+            <p>
+                Heeft u een vraag of wenst u vrijblijvende informatie? Aarzel zeker niet contact met ons op te nemen aan de hand van onderstaand formulier.
+            </p>
+            <div class="itemsC">
+                <div class="item">
+                    <img src="resources/Icons/mail-lorange.png">
+                    <span>
+                        info@dmgvastgoed.be
+                    </span>
+                </div>
+
+                <div class="item">
+                    <img src="resources/Icons/phone-lorange.png">
+                    <span>
+                        055 21 12 10
+                    </span>
+                </div>
+                <div class="item">
+                    <img src="resources/Icons/location-lorange.png">
+                    <span>
+                        Stationsstraat 30, 9600 Ronse
+                    </span>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="inputC">
+                <span>Naam & Voornaam</span>
+                <div class="inputE">
+                    <img src="resources/Icons/name.png">
+                    <input type="text" required minlength="4">
+                </div>
+            </div>
+            <div class="inputC">
+                <span>Telefoon</span>
+                <div class="inputE">
+                    <img src="resources/icons/phone-light.png">
+                    <input type="tel" required >
+                </div>
+            </div>
+            <div class="inputC">
+                <span>Mail</span>
+                <div class="inputE">
+                    <img src="resources/Icons/mail-light.png">
+                    <input type="email" required >
+                </div>
+            </div>
+            <div class="inputC">
+                <span>Message</span>
+               <textarea placeholder="Message"
+                rows="10" cols="30"></textarea>
+            </div>
+            <div class="buttonC">
+                <button>Send Message</button>
+            </div>
+        </form>
+    </section>
+    <section class="endOfPage" id="end">
+        <div class="successStory">
+            <div class="story">
+                <img src="Resources/Icons/orange-house.png">
+                <p class="numberBig">379</p>
+                <p>Paden te koop of te huur</p>
+            </div>
+
+            <div class="story">
+                <img src="Resources/Icons/orange-sale.png">
+                <p class="numberBig">548</p>
+                <p>Paden Verkocht</p>
+            </div>
+
+            <div class="story">
+                <img src="Resources/Icons/orange-star.png">
+                <p class="numberBig">9,4 / 10</p>
+                <p>Klanten tevredenheid</p>
+            </div>
+        </div>
+        <form class="mainForm">
+            <img src="Resources/Images/bg-villa.jpg" class="bg-cover">
+            <div class="info">
+                <div class="whiteLine"></div>
+                <h2>Afspraak maken</h2>
+                <p>Had u graag meer informatie gekregen tijdens een persoonlijk gesprek? 
+                    Contacteer ons gerust via onderstaand formulier. Eén van onze makelaars neemt
+                     dan zo snel mogelijk telefonisch of per mail contact met u op om een afspraak vast te leggen.
+                </p>
+            </div>
+       
+            <div class="inputs">
+                <input type="text" required="" placeholder="Naam*">
+                <input type="email" required="" placeholder="E-mail*">
+                <input type="phone" required="" placeholder="Telefoon*">
+                <button>Afspraak Vragen</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="flexRow footCont">
+            <div class="flexCol compIntro">
+                <img src="Resources/Logo/Wit-DMG.png">
+                <p>
+                    DMG Vastgoed Bv is onderworpen aan de deontologische code van het BIV.
+                    <br>
+                     Erkend vastgoedmakelaar en bemiddelaar met BIV nr. 510549. Land van toekenning is België. 
+                     <br><br>Adres BIV: Luxemburgstraat, 16B, 1000 BRUSSEL. BA en borgstelling via NV AXA Belgium (polisnummer 730.390.160)
+                </p>
+            </div>
+            <div class="flexCol sitemap">
+                <h3>Sitemap</h3>
+                <a>Kopen</a>
+                <a>Huren</a>
+                <a>Nieuwbouw</a>
+                <a>Verkopen</a>
+                <a>Verhuren</a>
+                <a>Over ons</a>
+                <a>Contact</a>
+            </div>
+            <div class="flexCol gegevens">
+                <h3>Gegevens</h3>
+                <p>
+                    <img src="Resources/Icons/location-orange.png">
+                    Stationsstraat 30, <br><br>
+                    9600 Ronse
+                </p>
+                <p>
+                    <img src="Resources/Icons/phone-orange.png">
+                    055 21 12 10
+                </p>
+                <p>
+                    <img src="Resources/Icons/emial-ornage.png">
+                    info@dmgvastgoed.be
+                </p>
+                <p>
+                    <img src="Resources/Icons/tag-orange.png">
+                    BE 0715.734.393
+                </p>
+            </div>
+            <div class="flexCol gegevens">
+                <h3>Openingsuren</h3>
+                <div class="openingsuur">
+                    <p>M</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="openingsuur">
+                    <p>D</p>
+                    <p>9H00 - 12H30 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>W</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="break">
+
+                </div>
+                <div class="openingsuur">
+                    <p>D</p>
+                    <p>9H00 - 12H30 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>V</p>
+                    <p>9H00 - 12H30 & 14H00 - 18H00</p>
+                </div>
+                <div class="openingsuur">
+                    <p>Z</p>
+                    <p>10H00 - 13H00 & Op afspraak</p>
+                </div>
+                <div class="openingsuur">
+                    <p>Z</p>
+                    <p>Gesloten</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="flexRow footfoot">
+            <div class="socialmedia">
+                <img src="Resources/Icons/insta.png">
+                <img src="Resources/Icons/ln copie.png">
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/mainEventHandlers.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
+    <script src="scripts/lazy_gallery.js"></script>
+    <script>
+        Lazy();
+    </script>
+</body>
+</html>
